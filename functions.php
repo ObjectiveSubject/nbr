@@ -55,7 +55,7 @@ function nbr_setup() {
 	 * Enable support for Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
-	add_theme_support( 'post-thumbnails' );	
+	add_theme_support( 'post-thumbnails' );
 
 }
 endif; // nbr_setup
@@ -66,18 +66,18 @@ add_action( 'after_setup_theme', 'nbr_setup' );
 Modify the loop for certain templates
 -------------------------------------------------------------
 ------------------------------------------------------------- */
-function set_custom_post_types_admin_order($query) {  
-  if (is_admin()) {  
-  
-    $post_type = $query->query['post_type'];  
-  
-    if ( $post_type == 'awards') {  
-      $query->set('orderby', 'title');  
-      $query->set('order', 'ASC');  
-    }  
-  }  
-}  
-add_filter('pre_get_posts', 'set_custom_post_types_admin_order');  
+function set_custom_post_types_admin_order($query) {
+  if (is_admin()) {
+
+    $post_type = $query->query['post_type'];
+
+    if ( $post_type == 'awards') {
+      $query->set('orderby', 'title');
+      $query->set('order', 'ASC');
+    }
+  }
+}
+add_filter('pre_get_posts', 'set_custom_post_types_admin_order');
 
 
 /* Award Years tax archive */
@@ -192,11 +192,11 @@ add_action( 'widgets_init', 'nbr_widgets_init' );
  * Enqueue scripts and styles
  */
 function nbr_scripts() {
-	
+
 	wp_enqueue_style( 'nbr-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.min.js', array(), '1.0', false );
 	wp_enqueue_script( 'nbr-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-	wp_enqueue_script( 'nbr-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20120206', true );
+	// wp_enqueue_script( 'nbr-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20120206', true );
 	wp_enqueue_script( 'responsive_slides_js', get_template_directory_uri() . '/js/responsiveslides.min.js', array('jquery'), '1.54', true );
 	wp_enqueue_script( 'jqueryMousewheel_js', get_template_directory_uri() . '/js/jquery.mousewheel.min.js', array('jquery'), '', true );
 	wp_enqueue_script( 'mCustomScrollbar_js', get_template_directory_uri() . '/js/jquery.mCustomScrollbar.min.js', array('jquery'), '', true );
