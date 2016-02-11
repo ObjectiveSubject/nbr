@@ -1,0 +1,596 @@
+@media only screen and (max-width: 900px) { /* ----------------------- LESS THAN 900PX WIDE */
+	.width-75 { width: 100%; }
+	.width-66 { width: 50%; }
+	.width-50 { width: 100%; }	
+	.width-33 { width: 50%; }
+	.width-25 { width: 50%; }
+	
+	.width-75 .page-header { padding: 2.5%; }
+	.width-66 .page-header { padding: 5%; }
+	.width-50 .page-header { padding: 2.5%; }
+	.width-33 .page-header { padding: 5%; }
+	.width-25 .page-header { padding: 5%; }
+	
+	/* Widgets 
+	----------------------------------------------------- */
+	.widget-area {
+		width: 100%;
+		}
+		
+		.width-25 .widget h2 { padding: 5% 5% 10px 5%; }
+		.width-50 .widget h2 { padding: 2.5% 2.5% 10px 2.5%; }
+		
+		.widget .view-all-page,
+		.widget .hentry { padding-left: 5%; padding-right: 5%; }
+		
+		.width-50 .widget .view-all-page,
+		.width-50 .widget .hentry { padding-left: 2.5%; padding-right: 2.5%; }		
+	
+		/* Awards module ------------------------- */
+		.widget-awards { min-height: 0; }
+		.width-25 .widget-awards h2 { padding: 2.5% 2.5% 10px 2.5%; }
+		.widget-awards ul.gala-images li {
+			width: 28.25%;
+			float: left;
+			margin: 2.5%;
+			padding-top: 18.5%;
+			}
+
+		/* Grant Years module -------------------- */
+		#grants-module { width: 50%; }
+			.widget-grants .grant-tax-list { padding: 10px 5% 25px 5%; }
+			.widget-grants .hentry { padding: 0; }
+			.widget-grants .student-grants a { padding: 5%; }
+				.widget-grants .student-grants a img {
+					width: 25%;
+					float: left;
+					margin-right: 5%;
+					}
+				.widget-grants .student-grants a .project-title,
+				.widget-grants .student-grants a .project-author {
+					width: 65%;
+					float: left;
+				}
+		
+		/* News module --------------------------- */
+		#news-module {
+			width: 50%;
+			float: left;
+			}
+			.home #news-module { width: 100%; }
+
+		/* Q&A module --------------------------- */
+		#qa-module {
+			width: 50%;
+			float: left;
+			}
+			.home #qa-module { width: 100%; }
+			
+			.widget-qa p {
+				width: 40%;
+				float: left;
+				margin-right: 10%;
+				}
+				.widget-qa a img { width: 50%; float: left; }
+
+		/* Archive module --------------------------- */
+		#archives-module {
+			width: 50%;
+			float: left;
+			}
+			.home #archives-module {width: 100%;}
+			
+			.page-template-page-est-1909-php .widget-archives p {
+				width: 50%;
+				float: left;
+				margin-right: 10%;
+				}
+				.page-template-page-est-1909-php .widget-archives img { width: 35%; float: right; }
+				
+		/* Home Page widgets (features) -------------------- */			
+			.home-features .widget-news { height: auto; }
+			.home-features .widget-qa p { 
+				width: 100%;
+				float: none;
+				margin-right: 0;
+				}
+				
+	/* Pages
+	----------------------------------------------------- */
+	/* Home -------------------- */
+	.home-slides li .slide-content h2 { font-size: 1.5em; }
+	
+	.home-about { position: relative; }
+	.home .content.width-75 { width: 50%; }
+		.home-about .wrapper {
+			padding: 5% 10% 5% 5%;
+			width: 85%;
+			float: left;
+			}
+		.home-about .image { 
+			position: absolute;
+			padding-top: 0;
+			height: 100%;
+			right: 0; 
+			}
+	
+	/* Features Page -------------------- */			
+	.qa-text { width: 25%;}
+	.qa-image { width: 75%;	}
+	#news-block, #archives-block {
+		width: 50%;
+		}
+	
+	/* Single Student Grant -------------------- */	
+	.project-details { padding: 5%; }
+	
+	/* Single Gala -------------------- */
+	.gala-header .width-75 { width: 75%; }
+		.gala-header .award-link { font-size: 20px; }
+		.gala-header .thumb-nav { margin: 30px 0 -2.666% 0; }
+	.gala-years { width: 25%; }
+	.single-galas .site-content .width-50 { width: 50%; }
+	.gala-slideshow li .image { height: 21%; }
+				
+
+}
+	
+	
+	
+	
+@media only screen and (max-width: 768px) { /* ------------------------- LESS THAN 768PX WIDE */
+	
+	/* Header
+	----------------------------------------------------- */
+	#masthead { padding: 30px 0 0; }
+		.site-branding {
+			float: none;
+			margin-bottom: 30px;
+			width: 50%;
+			}
+		.navigation-main {
+			float: none;
+			padding: 0;
+			width: 100%;
+			margin: 0;
+			}
+			.navigation-main .menu-group-1-container, 
+			.navigation-main .menu-group-2-container, 
+			.navigation-main .menu-group-3-container {
+				width: 25%;
+				min-width: 160px;
+				margin-left: 2.5%;
+				}
+				.navigation-main ul { 
+					display: none;
+					width: 100%;
+					float: left; 
+					padding: 20px 0;
+					}
+					.navigation-main ul.open { display: block; }
+					
+			.menu-toggle { display: block; }
+			.navigation-main.open .menu-toggle a {
+				background-image: url('../images/close.png');
+				}
+
+		#searchform #s { font-size: 1.75em; padding-top: 8px; }
+			
+	/* Footer
+	----------------------------------------------------- */
+	.site-footer { margin: 50px 0 30px 0; }			
+		.site-info { width: 50%; min-width: 250px; margin-bottom: 10px; }
+		.navigation-footer { 
+			width: 100%;
+			border-top: 1px solid #3D3D3D;
+			}
+			.navigation-footer .menu-group-1-container, 
+			.navigation-footer .menu-group-2-container, 
+			.navigation-footer .menu-group-3-container { display: none; }
+			.navigation-footer .menu-group-4-container { width: 25%; }
+		
+			.navigation-footer .menu-toggle { border: none; }
+				.navigation-footer .menu-toggle a { margin: 0; }
+				
+	#mc-embedded-subscribe-form #mce-EMAIL { font-size: 1.75em; padding-top: 8px; }
+						
+	/* Widgets 
+	----------------------------------------------------- */
+	.width-25 .widget h2 { padding: 2.5% 2.5% 10px 2.5%; }
+	
+	.widget .view-all-page,
+	.widget .hentry { padding-left: 2.5%; padding-right: 2.5%; }
+		
+		#grants-module,
+		#news-module,
+		#qa-module,
+		#archives-module,
+		#people-module { width: 100%; }
+		
+	
+		/* Grant Years module -------------------- */
+			.widget-grants .grant-tax-list { padding: 10px 2.5% 25px 2.5%; }
+			.widget-grants .hentry { padding: 0; }
+			.widget-grants .student-grants a { padding: 2.5%; }
+				.widget-grants .student-grants a img {
+					margin-right: 2.5%;
+					}
+		
+		/* Home Page widgets (features) -------------------- */			
+			.home-features .feature { width: 100%; }
+			
+				.home-features .widget { height: auto; }
+	
+	
+	/* Content (general)
+	----------------------------------------------------- */
+	.entry-content, .entry-summary { padding: 0 2.5%; }
+	
+	blockquote {
+		padding: 25px 4.5% 25px 15%;
+		margin-left: -2.666%;
+		margin-right: -2.666%;
+		}
+	
+	/* Pages
+	----------------------------------------------------- */
+	/* Home -------------------- */
+	.home-slides { max-height: none; }
+		.home-slides li { height: auto; padding-top: 0; }
+			.home-slides li .slide-image {
+				position: relative;
+				width: 100%;
+				height: 0;
+				padding-top: 66.666%;
+				}
+				.home-slides li .slide-image img {
+					width: 100%;
+					height: auto;
+					top: 0;
+					}
+			.home-slides li .slide-content {
+				position: relative;
+				width: 95%;
+				height: 100px;
+				left: 0;
+				background: #DEDEDE;
+				color: #1A1A1A;
+				}
+			.entry-media > a.prev, .entry-media > a.next { top: 25%; }
+			.entry-media.home > a.next { right: 0; }
+			
+			.entry-media.home > a.prev:hover, 
+			.entry-media.home > a.next:hover { background-color: #dedede; }
+
+		.entry-media.home .r_slides_tabs {
+			left: 0;
+			width: 95%;
+			top: 0%;
+			bottom: auto;
+			}
+			
+			.entry-media.home:hover .r_slides_tabs li a { background: #2e2e2e; }
+			
+		.thumb-nav .btn { opacity: 1; background-color: #ffd34b; /* NBR YELLOW */ }
+	
+	/* Award Years & Award Names Archive -------------------- */		
+	.tax-award-years .awards,
+	.tax-award-names .awards { width: 50%; }
+		.tax-award-years .awards .wrapper,
+		.tax-award-names .awards .wrapper { padding: 5%; }
+			
+		.divider { display: none; }
+		.gala-link { display: block; font-size: 20px; }
+
+	/* About Page -------------------- */
+	#outreach-orgs ul li { 
+		width: 49.8%; 
+		border-bottom: 1px solid #FFF;
+		border-right: 1px solid #FFF;
+		}
+		#outreach-orgs ul li:nth-child(odd) { background: none; }
+		#outreach-orgs ul li:nth-child(even) { border-right: none; }
+	
+	/* Features Page -------------------- */
+	.page-template-page-features-php .articles { padding: 2.5%; }
+	
+	#qa-block {
+		padding-top: 0;
+		height: auto;
+		}
+		.qa-text,
+		.qa-image {
+			position: relative;
+			width: 100%;
+			}
+			
+			.qa-image { height: 0; padding-top: 56%; }
+				.qa-image img { position: absolute; top: 0; }
+			
+			.qa-text > * { padding: 0 2.5%; }
+	
+	#news-block, #archives-block {
+		width: 100%;
+		height: auto;
+		}
+	
+	/* Single Post -------------------- */	
+	.entry-media.post > a.prev, .entry-media.post > a.next { top: 30%; }
+	
+	.type-post .entry-content .share { position: static; }
+		.type-post .entry-content .share h6 {
+			text-align: left;
+			border-bottom: 1px solid #DDD;
+			}
+		.share-button-wrap { width: 100%; height: auto; }
+			.share-button-wrap:hover { height: auto; }
+			
+			.share-button-wrap .icon { margin: 0 15px 0 0; float: left; }
+			.share-button-wrap .link { float: left; margin-top: 5px; }
+			
+	/* Single Gala -------------------- */
+	.gala-header .width-75 { width: 100%; margin-top: 80px; }		
+		.gala-header .award-link { display: block; }
+		.gala-header .sponsor {
+			bottom: auto;
+			top: 15px;
+			right: 2.5%;
+			width: auto;
+			text-align: right;
+			z-index: 1;
+			}
+		.gala-header .thumb-nav { margin-top: 15px; }
+	.gala-years {
+		width: 100%;
+		height: 80px;
+		}
+		.gala-years .wrapper { padding: 2.5%; }
+		
+	.entry-media .gala_slides_nav.prev,
+	.entry-media .gala_slides_nav.next { top: 30%; }
+
+	.single-galas .entry-summary .quote { font-size: 1.5em; }
+	
+	
+	
+}
+
+@media only screen and (max-width: 540px) { /* ----------------------- LESS THAN 540PX WIDE */
+	
+	/* Header
+	----------------------------------------------------- */
+	.site-branding { width: 75%; }
+
+	.navigation-main ul { 
+		border-bottom: 1px solid #3D3D3D;
+		margin-bottom: 10px;
+		}
+
+	.navigation-main .menu-group-1-container, 
+	.navigation-main .menu-group-2-container, 
+	.navigation-main .menu-group-3-container {
+		width: 95%;
+		min-width: 0;
+		}
+
+	#searchform { padding: 10px 15px; }
+	#searchform #s { font-size: 1.2em; }
+	
+	/* Footer
+	----------------------------------------------------- */
+	.navigation-footer .menu-group-4-container { width: 100%; }
+	
+	#mc-embedded-subscribe-form { padding: 10px 15px; }
+	#mc-embedded-subscribe {
+		position: static;
+		margin: 10px 0 0;
+		padding: 15px;
+		font-size: 1.2em;
+		opacity: 1; 
+		background-color: #3D3D3D;
+		width: 70%;
+		}
+		
+		#mc-embedded-subscribe:focus, 
+		#mc-embedded-subscribe-form:hover #mc-embedded-subscribe,
+		#mc-embedded-subscribe-form > *:focus ~ #mc-embedded-subscribe { margin: 10px 0 0; }
+	#mc-embedded-subscribe-form #mce-EMAIL {
+		font-size: 1.5em;
+		border: none;
+		border-radius: 0;
+		padding: 15px 30% 5px 0;
+		width: 70%; 
+		}
+	
+	/* Widgets 
+	----------------------------------------------------- */
+	.width-25 .widget h2 { padding: 15px 15px 10px 15px; }
+		
+	.widget .view-all-page,
+	.widget .hentry,
+	.width-50 .widget .view-all-page,
+	.width-50 .widget .hentry { padding-left: 15px; padding-right: 15px; }
+		
+		/* Awards module ------------------------- */
+		.width-25 .widget-awards h2 { padding: 15px 15px 10px 15px; }
+
+		/* Grant Years module -------------------- */
+			.widget-grants .grant-tax-list { padding: 10px 15px 25px 15px; }
+			.widget-grants .hentry { padding: 0; }
+			.widget-grants .student-grants a { padding: 15px; }
+				.widget-grants .student-grants a img {
+					margin-right: 5%;
+					}
+	
+	/* Content (general)
+	----------------------------------------------------- */
+	h1, h2 { font-size: 1.5em; }
+
+	.width-75 .page-header,
+	.width-66 .page-header,
+	.width-50 .page-header,
+	.width-33 .page-header,
+	.width-25 .page-header { padding: 15px; }
+	
+	.entry-content, .entry-summary { padding: 0 15px; }
+
+	
+	/* Pages
+	----------------------------------------------------- */
+	/* Home -------------------- */
+	.home-slides li .slide-content { 
+		width: 85%;
+		height: 150px; 
+		padding: 15px 15% 15px 15px; 
+		}
+	
+	.entry-media.home .r_slides_tabs,
+	.entry-media > a.prev, 
+	.entry-media > a.next { display: none;/* top: 18%; */ }
+	
+	
+	
+	.home-about .image {
+		position: static;
+		height: auto;
+		float: none;
+		width: 100%;
+		}
+		.home-about .image img {
+			position: static;
+			min-height: 0;
+			height: auto;
+			width: 100%;
+			}
+			
+	.home .content.width-75 { width: 100%; }
+	.home-about .wrapper {
+		padding: 25px 2.5% 0;
+		width: auto;
+		float: none;
+		}
+	
+	/* Award Years & Award Names Archive -------------------- */
+	.tax-award-years .awards .wrapper,
+	.tax-award-names .awards .wrapper { padding: 15px; }
+	
+	/* Features Page -------------------- */
+	.page-template-page-features-php .articles { padding: 15px; }
+	
+	/* Contact Page -------------------- */
+	.general, .secondary {
+		width: 100%;
+		float: none;
+		}
+	.general {
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #2e2e2e;
+	}
+	
+	/* Single Post -------------------- */	
+	.entry-media.post > a.prev, .entry-media.post > a.next { top: 22.5%; }
+	
+	/* Student Grants Page -------------------- */	
+	.tax-grant-year .student-grants, .tax-schools .student-grants {
+		width: 100%;
+		border-right: none;
+		}
+	
+	/* Signle Student Grant -------------------- */	
+	.single-student-grants .site-content .width-66,
+	.single-student-grants .site-content .width-33 { width: 100%; }
+	
+	.single-student-grant .entry-summary,
+	.single-student-grant .entry-content,
+	.project-details { padding: 15px; }
+	
+	/* Single Gala -------------------- */
+	.gala-header .page-header { padding: 15px 15px 2.5% 15px; }
+	
+	.gala-years .wrapper { padding: 15px; }
+		
+	.gala-slideshow li .image { height: 15%; }
+	
+	.title-caption { padding: 15px; text-align: center; }
+	
+	.entry-media .gala_slides_nav.prev,
+	.entry-media .gala_slides_nav.next { top: 25%; }
+	
+	.single-galas .site-content .width-50 { width: 100%; }
+	
+}
+
+
+
+
+
+@media only screen and (max-width: 420px) { /* ---------------------- LESS THAN 420PX WIDE */
+
+	/* Widgets 
+	----------------------------------------------------- */
+	/* Q&A module ---------------- */
+	.widget-qa p {
+		width: 100%;
+		float: none;
+		margin-right: 0;
+		}
+		.widget-qa a img { width: 100%; float: none; }
+
+	/* Archive module ------------ */
+	.page-template-page-est-1909-php .widget-archives p {
+		width: 100%;
+		float: none;
+		margin-right: 0;
+		}
+		.page-template-page-est-1909-php .widget-archives img { width: 100%; float: none; }
+	
+	/* Awards module ------------- */
+		.widget-awards ul.gala-images li {
+			width: 90%;
+			float: none;
+			margin: 5%;
+			padding-top: 50%;
+			}
+	
+	/* Content (general)
+	----------------------------------------------------- */		
+	blockquote {
+		margin-left: -15px;
+		margin-right: -15px;
+		padding: 25px 15px 25px 35px;
+		font-size: 1.5em;
+		}
+	
+	/* Pages
+	----------------------------------------------------- */		
+	/* Award Years & Award Names Archive -------------------- */		
+	.tax-award-years .awards,
+	.tax-award-names .awards { 
+		width: 100%;
+		height: auto;
+		min-height: 110px;
+		border-bottom: 1px solid #2E2E2E; 
+		}
+	
+	/* About Page -------------------- */
+	#outreach-orgs ul li { 
+		width: 99.8%; 
+		float: none;
+		}		
+		
+	/* Category Archive -------------------- */	
+	.archive.category .site-content .type-post > .width-25 { width: 100%; }
+
+	/* Single Gala -------------------- */	
+	.gala-header .sponsor {
+		position: static;
+		text-align: left;
+		margin-top: 10px;
+		}
+		
+	.gala-header.has-sponsor .width-75 { margin-top: 150px; }
+	
+	.gala-slideshow li .image { height: 9%; }
+
+}

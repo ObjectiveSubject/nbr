@@ -1,0 +1,147 @@
+/* MODULES
+--------------------------------------------------------------
+-------------------------------------------------------------- */
+
+.widget { overflow: hidden; }
+	.width-25 .widget h2 { padding: 10% 10% 10px 10%; }
+	.width-50 .widget h2 { padding: 5% 5% 10px 5%; }
+	.widget .hentry {
+		padding: 10px 10%;
+		margin: 0;
+		}
+	.width-50 .widget .hentry {
+		padding: 10px 5%;
+		margin: 0;
+		}
+		
+		.widget a:hover { text-decoration: underline; }
+		.widget p { margin: 0; }
+	
+	.widget .view-all-page {
+		display: block;
+		margin-top: 1em;
+		padding: 0 10% 25px 10%;
+		}
+		.width-50 .widget .view-all-page { padding: 0 5% 25px 5%; }
+		
+		.widget:hover .view-all-page,
+		.widget:hover .view-all-drawer {
+			color: white;
+		}
+
+	.widget ul { list-style: none; margin: 0; }
+	
+
+
+/* Archives Module
+------------------------- */
+/* .widget-archives .hentry { padding: 25px; } */
+	.widget-archives a { display: block; }
+	.widget-archives p { margin-bottom: .5em; }
+
+
+
+/* Awards Module
+------------------------- */
+.widget-awards {
+	min-height: 600px;
+}
+	.widget-awards h2 { margin-bottom: 0px; }
+		
+	.widget-awards .award-sponsor { margin: 0 25px; }
+	
+	.widget-awards ul.gala-images li {
+		position: relative;
+		padding-top: 50%;
+		overflow: hidden;
+		margin: 25px;
+		opacity: .8;
+		-webkit-transition: all 250ms ease;
+		-moz-transition: all 250ms ease;
+		-ms-transition: all 250ms ease;
+		-o-transition: all 250ms ease;
+		transition: all 250ms ease;
+		}
+		.widget-awards ul.gala-images li a { display: block; opacity: .8; }
+			.widget-awards ul.gala-images li a img { 
+				position: absolute; 
+				top: 0; 
+				left: 0;
+				}
+				.widget-awards ul.gala-images li a:hover { opacity: 1; }
+
+/* Grant Years Module
+------------------------- */
+.widget-grants  { overflow: hidden; }
+.widget-grants .hentry { padding: 0; }
+		
+	.widget-grants .grant-tax-list { padding: 10px 10% 25px 10%; }
+	
+		.widget-grants .grant-tax-list .grant-tax {
+			position: relative;
+			margin-right: 30px;
+			}
+
+			.widget-grants .grant-tax-list .grant-tax > span { /* display: block; */ }
+	
+				.widget-grants .grant-tax ul {
+					width: 100%;
+/* 					margin: .5em 0; */
+					}
+					
+						.widget-grants .grant-tax ul li a { padding-bottom: .5em; }
+	
+	
+	.widget-grants .grant-winners {
+		max-height: 780px;
+		overflow: auto;
+		border-bottom: 1px solid #2E2E2E;
+		box-shadow: inset 0 0 60px #111;
+		}
+		.widget-grants .grant-winners::-webkit-scrollbar,
+		.widget-grants .grant-winners::-moz-scrollbar { display: none; }
+		
+		.widget-grants .student-grants {
+			width: 100%;
+			float: none;
+			margin: 0;
+			height: auto;
+			}
+		.widget-grants .student-grants a { 
+			display: block; 
+			padding: 10%;
+			border-bottom: 1px solid #3D3D35;
+			} 
+			.widget-grants .student-grants a:hover { text-decoration: none; }
+	
+			.widget-grants .student-grants a img.placeholder { opacity: .15 }
+				.widget-grants .student-grants a:hover img.placeholder { opacity: .5 }	
+				
+			.widget-grants .student-grants a .project-title { font-style: italic; }
+			.widget-grants .student-grants a .project-author { color: #777; }
+				.widget-grants .student-grants a:hover .project-author { color: white; }	
+
+/* News Module
+------------------------- */
+
+
+
+/* People Module
+------------------------- */
+.widget-people p strong { 
+	display: block;
+	font-size: .75em;
+	text-transform: uppercase;
+	margin-bottom: .5em;
+	font-weight: normal;
+	}
+	
+.widget-people p em {
+	display: block;
+	line-height: 1.25em;
+	margin-bottom: .75em;
+	}
+
+/* QA Module
+------------------------- */
+.widget-qa p {margin-bottom: .5em;}
