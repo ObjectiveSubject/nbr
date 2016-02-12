@@ -127,9 +127,11 @@
 	.project-details { padding: 5%; }
 
 	/* Single Gala -------------------- */
+	.gala-header .page-header {
+	    padding-bottom: 0;
+	}
 	.gala-header .width-75 { width: 75%; }
 		.gala-header .award-link { font-size: 20px; }
-		.gala-header .thumb-nav { margin: 30px 0 -2.666% 0; }
 	.gala-years { width: 25%; }
 	.single-galas .site-content .width-50 { width: 50%; }
 	.gala-slideshow li .image { height: 21%; }

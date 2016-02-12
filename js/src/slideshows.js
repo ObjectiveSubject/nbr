@@ -5,10 +5,10 @@
 (function($){
 
     $(".home-slides").slick({
-        autoplay: false,
-        speed: 500,            			// Integer: Speed of the transition, in milliseconds
-        autoplaySpeed: 4500,         		// Integer: Time between slide transitions, in milliseconds
-        dots: true,           			// Boolean: Show pager, true or false
+        autoplay: true,
+        speed: 500,
+        autoplaySpeed: 4500,
+        dots: true,
         fade: true,
         adaptiveHeight: true,
         responsive: [{
@@ -19,8 +19,8 @@
 
     $(".post-slides").slick({
       autoplay: false,
-      speed: 500,            			// Integer: Speed of the transition, in milliseconds
-      dots: true,           			// Boolean: Show pager, true or false
+      speed: 500,
+      dots: true,
       fade: true,
       adaptiveHeight: true,
       responsive: [{

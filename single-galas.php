@@ -11,16 +11,16 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-	
+
 		<header class="gala-header bg-80 clear <?php if(get_field('gala_sponsor')) { echo('has-sponsor'); } ?>">
 			<div class="width-75">
 				<div class="page-header">
 					<?php
-					$post_award_years = get_the_terms( $post->ID, 'award-years' ); 
+					$post_award_years = get_the_terms( $post->ID, 'award-years' );
 					foreach ( $post_award_years as $post_award_year ) { $this_year = $post_award_year->slug; }
 					?>
 					<h1 class="page-title"><?php the_title(); ?><span class="faded-text divider">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span class="faded-text award-link"><a href="<?php echo site_url('/award-years/'.$this_year); ?>">See The Winners</a></span></h1>
-					
+
 <!--
 					<?php if(get_field('partners')) : ?>
 						<div class="partners clear bg-82">
@@ -44,7 +44,7 @@ get_header(); ?>
 							<?php endforeach; ?>
 						</div>
 					<?php endif; ?>
-										
+
 					<div class="share-button-wrap twitter">
 						<span class="icon">Twitter</span>
 						<span class="link">
@@ -58,13 +58,13 @@ get_header(); ?>
 							<div class="fb-share-button" data-href="<?php echo get_permalink(); ?>" data-type="button_count"></div>
 						</span>
 					</div>
-					
+
 					<div class="share-button-wrap email">
 						<a href="mailto:?subject=National%20Board%20of%20Review%20|%20<?php the_title(); ?>&amp;body=<?php the_permalink(); ?>" class="icon">Email</a>
 					</div>
-					
+
 					<div class="thumb-nav">
-						<ul class="gala_slides_tabs">
+						<ul class="gala_slides_tabs" data-slick='{ "prevArrow": ".thumb-nav.prev", "nextArrow": ".thumb-nav.next" }'>
 							<?php while(has_sub_field('gala_slideshow')): ?>
 							<li>
 								<?php $image = get_sub_field('gala_image'); $url = $image['url']; ?>
@@ -72,13 +72,15 @@ get_header(); ?>
 							</li>
 							<?php endwhile; ?>
 						</ul>
+						<a href="#" class="slick-nav thumb-nav prev yellow-hover">Previous</a>
+						<a href="#" class="slick-nav thumb-nav next yellow-hover">Next</a>
 					</div>
 				</div>
-			</div>		
+			</div>
 			<div class="gala-years width-25 bg-70">
 				<div class="wrapper bg-70">
 					<h2>Galas</h2>
-					<?php 
+					<?php
 					$args = array('post_type'=>'galas', 'posts_per_page'=>-1);
 					$galas = new WP_Query($args); ?>
 					<ul class="drawer">
@@ -92,12 +94,12 @@ get_header(); ?>
 				</div>
 			</div>
 		</header>
-			
+
 		<div class="entry-media gala clear">
-			
-			<ul class="gala-slideshow clear">
+
+			<ul class="gala-slideshow bg-86 clear" data-slick='{ "prevArrow": ".main-slick-nav.prev", "nextArrow": ".main-slick-nav.next" }'>
 				<?php while(has_sub_field('gala_slideshow')): ?>
-					<?php 
+					<?php
 					$image = get_sub_field('gala_image');
 					$url = $image['url'];
 					$alt = $image['alt'];
@@ -105,20 +107,22 @@ get_header(); ?>
 					$caption = $image['caption'];
 					?>
 					<li>
-						<div class="image">
+						<div class="image bg-82">
 							<div class="image-wrapper">
 								<img src="<?php echo($url); ?>" alt="<?php if($alt){echo($alt);} else {echo($title);} ?>" title="<?php echo($title); ?>" />
 							</div>
 						</div>
-						<div class="title-caption bg-86">
+						<div class="title-caption">
 							<h2><?php echo($title); ?></h2>
 							<p><?php echo($caption); ?></p>
 						</div>
 					</li>
 				<?php endwhile; ?>
 			</ul>
+			<a href="#" class="slick-nav main-slick-nav prev">Previous</a>
+			<a href="#" class="slick-nav main-slick-nav next">Next</a>
 		</div>
-		
+
 		<div class="width-50 bg-80">
 			<div class="entry-content">
 				<?php the_content(); ?>
@@ -131,31 +135,10 @@ get_header(); ?>
 				<p class="author"><?php the_field('gala_quote_source'); ?></p>
 			</div>
 		</div>
-			
+
 		<?php endwhile; // end of the loop. ?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
-	
+
 <?php get_footer(); ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

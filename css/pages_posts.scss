@@ -155,6 +155,9 @@ GENERAL PAGE/POST STYLES
 	position: relative;
 	}
 
+	.gala-header .page-header {
+		padding-bottom: 0;
+	}
 	.gala-header .page-title {
 		margin-bottom: 0.5em;
 	}
@@ -207,10 +210,10 @@ GENERAL PAGE/POST STYLES
 	.gala-slideshow li .image {
 		position: relative;
 		overflow: hidden;
-		padding-top: 65%;
+		padding-top: 66.666%;
 		background-repeat: no-repeat;
 		background-position: center top;
-		height: 29%;
+		height: 0;
 		}
 		.gala-slideshow li .image .image-wrapper {
 			position: absolute;
@@ -220,26 +223,12 @@ GENERAL PAGE/POST STYLES
 			height: 100%;
 			text-align: center;
 			}
-			.gala-slideshow li .image .image-wrapper img {
-				max-height: 105%;
-				}
 
-		.title-caption { padding: 2.5%; min-height: 130px; }
+		.title-caption { padding: 2.5%; }
 			.title-caption p { margin: 0; }
 
 .entry-media .gala_slides_nav.next,
 .entry-media .gala_slides_nav.prev { top: 35%; }
-
-
-.gala-header .thumb-nav {
-	position: relative;
-	margin: 0 0 -3.5% 0;
-	padding: 0;
-	clear: both;
-	}
-.nbr-touchevents .gala-header .thumb-nav {
-	display: none;
-	}
 
 	.gala_slides_tabs:before,
 	.gala_slides_tabs:after { content: ""; display: table; }
@@ -254,41 +243,76 @@ GENERAL PAGE/POST STYLES
 		-ms-transition: all 250ms ease;
 		-o-transition: all 250ms ease;
 		transition: all 250ms ease;
+		@media screen and (max-width: $lg) {
+			padding-bottom: 15px;
+			margin-right: 15px;
 		}
+	}
 		.gala_slides_tabs li:hover,
-		.gala_slides_tabs li.gala_slides_here { background: #ffd34b; /* NBR YELLOW */ }
+		.gala_slides_tabs li.slick-current { background: #ffd34b; /* NBR YELLOW */ }
+
 		.gala_slides_tabs a {
 			display: block;
-			width: 80px;
-			height: 80px;
+			width: 100%;
+			height: 0;
+			padding-top: 100%;
 			background-size: 175%;
 			background-position: center top;
 			background-repeat: no-repeat;
 			}
 
-	.thumb-nav .btn {
+.thumb-nav {
+	position: relative;
+	margin: 0 0 0 0;
+	padding: 0;
+	clear: both;
+	@media screen and ( max-width: $md) {
+		display: none;
+	}
+
+	&:hover {
+		.slick-nav {
+			opacity: 1;
+		}
+	}
+
+	.slick-nav {
 		position: absolute;
 		top: 0;
-		width: 25px;
-		height: 80px;
+		bottom: 25px;
+		width: 3.333%;
 		overflow: hidden;
 		text-indent: -99999px;
-		opacity: .5;
-		}	.thumb-nav:hover .btn { opacity: 1; background-color: #ffd34b; /* NBR YELLOW */ }
-		.thumb-nav .btn.prev,
-		.thumb-nav .btn.next {
+		opacity: 0.3;
+		background-color: transparent;
+		@media screen and ( max-width: $lg) {
+			width: 2.5%;
+			bottom: 15px;
+		}
+		&:hover { opacity: 1; background-color: #ffd34b; /* NBR YELLOW */ }
+
+		&.prev,
+		&.next {
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: 45%;
-			}
-		.thumb-nav .btn.prev {
-			left: 0;
+		}
+		&.prev {
+			left: -3.333%;
 			background-image: url('images/l_arrow_small.png');
+			@media screen and ( max-width: $lg) {
+				left: -2.5%;
 			}
-		.thumb-nav .btn.next {
-			right: 0;
+		}
+		&.next {
+			right: -3.333%;
 			background-image: url('images/r_arrow_small.png');
+			@media screen and ( max-width: $lg) {
+				right: -2.5%;
 			}
+		}
+	}
+}
 
 
 .single-galas .entry-content,
@@ -545,54 +569,9 @@ GENERAL PAGE/POST STYLES
 .single-post .entry-meta h6,
 .single-post .entry-meta p { margin: 0; }
 
-/* Slideshow or Feature Image */
-// .post-slides {
-// 	max-height: 500px;
-// 	overflow: hidden;
-// 	}
-//
-// 	.post-slides li {
-// 		height: 0;
-// 		padding-top: 56%;
-// 		width: 100%;
-// 		overflow: hidden;
-// 		}
-//
-// 		.post-slides li img {
-// 			position: absolute;
-// 			top: 0;
-// 			width: 100%;
-// 			}
-// 		.post-slides li .caption {
-// 			font-family: "AvenirNextLTPro-Medium", sans-serif;
-// 			position: absolute;
-// 			bottom: 0;
-// 			color: rgb(34, 34, 34);
-// 			background: white;
-// 			background: rgba(255, 255, 255, 0.7);
-// 			width: 100%;
-// 			padding: 5px 3.333%;
-// 			line-height: 18px;
-// 			font-size: 0.85em;
-// 			}
-
 .entry-media.post > a.prev, .entry-media.post > a.next {
 	top: 35%;
 	}
-
-	// .post-slides_tabs { padding: 3.333%; }
-	// 	.post-slides_tabs li { float: left; }
-	// 		.post-slides_tabs li a {
-	// 			display: block;
-	// 			background: #CCC;
-	// 			text-indent: -99999px;
-	// 			overflow: hidden;
-	// 			width: 50px;
-	// 			height: 6px;
-	// 			margin-right: 10px;
-	// 			}
-	// 			.post-slides_tabs li a:hover,
-	// 			.post-slides_tabs li.post-slides_here a { background: #ffd34b; /* NBR YELLOW */ }
 
 
 /* Written Content */
