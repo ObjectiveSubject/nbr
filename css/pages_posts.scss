@@ -35,9 +35,9 @@ GENERAL PAGE/POST STYLES
 			}
 
 	/* slide tabs */
-	.r_slides_tabs { padding: 3.333%; position: relative; z-index: 2; }
-		.r_slides_tabs li { float: left; }
-			.r_slides_tabs li a {
+	.slick-dots { padding: 3.333%; position: relative; z-index: 2; }
+		.slick-dots li { float: left; }
+			.slick-dots li button {
 				display: block;
 				background: #bbb;
 				text-indent: -99999px;
@@ -45,9 +45,20 @@ GENERAL PAGE/POST STYLES
 				width: 40px;
 				height: 6px;
 				margin: 0 5px 5px 0;
+				padding: 0;
+				box-shadow: none;
+				border-radius: 0;
+				border: 0;
+				-webkit-appearance: none;
+				appearance: none;
+				-webkit-transition: all 250ms ease;
+				-moz-transition: all 250ms ease;
+				-ms-transition: all 250ms ease;
+				-o-transition: all 250ms ease;
+				transition: all 250ms ease;
 				}
-				.r_slides_tabs li a:hover,
-				.r_slides_tabs li.r_slides_here a { background: #2e2e2e; }
+				.slick-dots li button:hover,
+				.slick-dots li.slick-active button { background: #2e2e2e; }
 
 
 
@@ -56,57 +67,57 @@ GENERAL PAGE/POST STYLES
 /* HOME
 --------------------------------------------------------------
 -------------------------------------------------------------- */
-.entry-media.home {  }
 
 /* Home Slideshow */
-.home-slides {
-	max-height: 500px;
-	overflow: hidden;
-	}
-	.home-slides li {
-		height: 0;
+.home-slides li {
+	.slide-image {
+		width: 75%;
+		float: left;
 		overflow: hidden;
-		padding-top: 50%;
-		width: 100%;
+		border: none;
 		}
-		.home-slides li > * {
-			position: absolute;
-			top: 0;
-			height: 100%;
-			}
-		.home-slides li .slide-image { width: 75%; left: 0; overflow: hidden; border: none;}
-			.home-slides li .slide-image img {
-				position: absolute;
-				max-width: none;
-				height: 100%;
-				}
-		.home-slides li .slide-content { width: 20%; height: 90%; left: 75%; padding: 2.5%; }
-			.slide-content > * { margin-bottom: 25px; }
-			.slide-content .slide-link { text-transform: uppercase; }
-			.slide-content .sponsor { opacity: .5; }
+	.slide-content {
+		width: 20%;
+		float: left;
+		padding: 2.5%;
+	}
+}
+.slide-content {
+	.slide-link { text-transform: uppercase; }
+	.sponsor { opacity: .5; }
+}
 
-	.entry-media.home > a.next {
+.entry-media.home {
+	& > a.next {
 		right: 25%;
-		}
-		.entry-media.home > a.prev:hover,
-		.entry-media.home > a.next:hover { background-color: #0094A5; /* NBR TEAL */ }
+	}
+	& > a.prev:hover,
+	& > a.next:hover { background-color: #0094A5; /* NBR TEAL */ }
 
-	.entry-media.home .r_slides_tabs {
+	.slick-dots {
 		position: absolute;
 		bottom: 0;
 		right: 0;
 		width: 20%;
 		padding: 2.5%;
 		z-index: 3;
+		&:before, &:after {
+			content: "";
+			display: table;
 		}
-		.entry-media.home .r_slides_tabs li a { background: #666; }
+		&:after {
+			clear: both;
+		}
+	}
 
-		.entry-media.home .r_slides_tabs li a:hover,
-		.entry-media.home .r_slides_tabs li.r_slides_here a,
-		.entry-media.home:hover .r_slides_tabs li a:hover,
-		.entry-media.home:hover .r_slides_tabs li.r_slides_here a { background: white; }
+	.slick-dots li button { background: #666; }
 
-		.entry-media.home:hover .r_slides_tabs li a { background: #48B5C2; /* NBR light TEAL */ }
+	.slick-dots li button:hover,
+	.slick-dots li.slick-active button,
+	&:hover .slick-dots li button:hover,
+	&:hover .slick-dots li.slick-active button { background: white; }
+	&:hover .slick-dots li button { background: #48B5C2; /* NBR light TEAL */ }
+}
 
 
 /* Home Features */
@@ -535,53 +546,53 @@ GENERAL PAGE/POST STYLES
 .single-post .entry-meta p { margin: 0; }
 
 /* Slideshow or Feature Image */
-.post-slides {
-	max-height: 500px;
-	overflow: hidden;
-	}
-
-	.post-slides li {
-		height: 0;
-		padding-top: 56%;
-		width: 100%;
-		overflow: hidden;
-		}
-
-		.post-slides li img {
-			position: absolute;
-			top: 0;
-			width: 100%;
-			}
-		.post-slides li .caption {
-			font-family: "AvenirNextLTPro-Medium", sans-serif;
-			position: absolute;
-			bottom: 0;
-			color: rgb(34, 34, 34);
-			background: white;
-			background: rgba(255, 255, 255, 0.7);
-			width: 100%;
-			padding: 5px 3.333%;
-			line-height: 18px;
-			font-size: 0.85em;
-			}
+// .post-slides {
+// 	max-height: 500px;
+// 	overflow: hidden;
+// 	}
+//
+// 	.post-slides li {
+// 		height: 0;
+// 		padding-top: 56%;
+// 		width: 100%;
+// 		overflow: hidden;
+// 		}
+//
+// 		.post-slides li img {
+// 			position: absolute;
+// 			top: 0;
+// 			width: 100%;
+// 			}
+// 		.post-slides li .caption {
+// 			font-family: "AvenirNextLTPro-Medium", sans-serif;
+// 			position: absolute;
+// 			bottom: 0;
+// 			color: rgb(34, 34, 34);
+// 			background: white;
+// 			background: rgba(255, 255, 255, 0.7);
+// 			width: 100%;
+// 			padding: 5px 3.333%;
+// 			line-height: 18px;
+// 			font-size: 0.85em;
+// 			}
 
 .entry-media.post > a.prev, .entry-media.post > a.next {
 	top: 35%;
 	}
 
-	.post-slides_tabs { padding: 3.333%; }
-		.post-slides_tabs li { float: left; }
-			.post-slides_tabs li a {
-				display: block;
-				background: #CCC;
-				text-indent: -99999px;
-				overflow: hidden;
-				width: 50px;
-				height: 6px;
-				margin-right: 10px;
-				}
-				.post-slides_tabs li a:hover,
-				.post-slides_tabs li.post-slides_here a { background: #ffd34b; /* NBR YELLOW */ }
+	// .post-slides_tabs { padding: 3.333%; }
+	// 	.post-slides_tabs li { float: left; }
+	// 		.post-slides_tabs li a {
+	// 			display: block;
+	// 			background: #CCC;
+	// 			text-indent: -99999px;
+	// 			overflow: hidden;
+	// 			width: 50px;
+	// 			height: 6px;
+	// 			margin-right: 10px;
+	// 			}
+	// 			.post-slides_tabs li a:hover,
+	// 			.post-slides_tabs li.post-slides_here a { background: #ffd34b; /* NBR YELLOW */ }
 
 
 /* Written Content */

@@ -10,15 +10,15 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content width-75 bg-0" role="main">
 
-		<?php while ( have_posts() ) : the_post(); 
-			$cats = get_the_terms($post->ID, 'category'); 
+		<?php while ( have_posts() ) : the_post();
+			$cats = get_the_terms($post->ID, 'category');
 			  foreach ($cats as $cat) {
 				  $cat_term = $cat->slug;
 			  }
 		?>
-		
+
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		
+
 			<header class="page-header bg-12">
 				<h1 class="page-title"><?php if (get_field('feature_related_film')) { ?><em><?php echo(get_field('feature_related_film')); ?></em> &ndash; <?php } the_title(); ?></h1>
 				<div class="entry-meta text-50">
@@ -28,9 +28,9 @@ get_header(); ?>
 					<h6><?php the_date('F Y'); ?></h6>
 					<?php endif; ?>
 <!--
-					<p>by <?php 
+					<p>by <?php
 						if (get_field('feature_author')) {  echo( get_field('feature_author') ); }
-						else { the_author(); } 
+						else { the_author(); }
 					?></p>
 -->
 				</div>
@@ -38,19 +38,21 @@ get_header(); ?>
 
 			<div class="entry-media post">
 				<?php if(get_field('feature_slideshow_images')): ?>
-				<ul class="post-slides">
+				<ul class="post-slides" data-slick='{ "prevArrow": ".slick-nav.prev", "nextArrow": ".slick-nav.next" }'>
 					<?php while(has_sub_field('feature_slideshow_images')): ?>
 					<li>
 						<img src="<?php the_sub_field('feature_slideshow_image'); ?>" alt="slideshow image"/>
 						<?php if (get_sub_field('feature_slideshow_image_caption')) : ?>
 						<div class="caption"><?php the_sub_field('feature_slideshow_image_caption'); ?></div>
 						<?php endif; ?>
-					</li>					
+					</li>
 					<?php endwhile; ?>
 				</ul>
+				<a href="#" class="slick-nav prev">Previous</a>
+				<a href="#" class="slick-nav next">Next</a>
 				<?php endif; ?>
 			</div>
-			
+
 			<div class="entry-content">
 				<?php the_content(); ?>
 				<div class="share clear">
@@ -74,7 +76,7 @@ get_header(); ?>
 					</div>
 				</div>
 			</div>
-		
+
 		</article>
 		<?php endwhile; ?>
 
@@ -86,6 +88,6 @@ get_header(); ?>
 		</div>
 	</div><!-- #primary -->
 
-	
+
 
 <?php get_footer(); ?>

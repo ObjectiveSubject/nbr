@@ -1,3 +1,7 @@
+@media only screen and (max-width: 1000px) { /* ----------------------- LESS THAN 1000PX WIDE */
+	.home-slides li .slide-content .h2 { font-size: 1.5em; }
+}
+
 @media only screen and (max-width: 900px) { /* ----------------------- LESS THAN 900PX WIDE */
 	.width-75 { width: 100%; }
 	.width-66 { width: 50%; }
@@ -98,8 +102,6 @@
 	/* Pages
 	----------------------------------------------------- */
 	/* Home -------------------- */
-	.home-slides li .slide-content h2 { font-size: 1.5em; }
-
 	.home-about { position: relative; }
 	.home .content.width-75 { width: 50%; }
 		.home-about .wrapper {
@@ -235,43 +237,28 @@
 	/* Pages
 	----------------------------------------------------- */
 	/* Home -------------------- */
-	.home-slides { max-height: none; }
-		.home-slides li { height: auto; padding-top: 0; }
-			.home-slides li .slide-image {
-				position: relative;
+	.home-slides { background: #DEDEDE; }
+		.home-slides li .slide-image {
+			width: 100%;
+			}
+			.home-slides li .slide-image img {
 				width: 100%;
-				height: 0;
-				padding-top: 66.666%;
+				height: auto;
 				}
-				.home-slides li .slide-image img {
-					width: 100%;
-					height: auto;
-					top: 0;
-					}
-			.home-slides li .slide-content {
-				position: relative;
-				width: 95%;
-				height: 100px;
-				left: 0;
-				background: #DEDEDE;
-				color: #1A1A1A;
-				}
-			.entry-media > a.prev, .entry-media > a.next { top: 25%; }
-			.entry-media.home > a.next { right: 0; }
-
-			.entry-media.home > a.prev:hover,
-			.entry-media.home > a.next:hover { background-color: #dedede; }
-
-		.entry-media.home .r_slides_tabs {
-			left: 0;
+		.home-slides li .slide-content {
+			position: relative;
 			width: 95%;
-			top: 0%;
-			bottom: auto;
+			left: 0;
+			color: #1A1A1A;
 			}
 
-			.entry-media.home:hover .r_slides_tabs li a { background: #2e2e2e; }
-
 		.thumb-nav .btn { opacity: 1; background-color: #ffd34b; /* NBR YELLOW */ }
+
+	.entry-media.home .slick-dots {
+		position: relative;
+		padding-top: 0;
+		width: auto;
+	}
 
 	/* Award Years & Award Names Archive -------------------- */
 	.tax-award-years .awards,
@@ -440,15 +427,8 @@
 	/* Home -------------------- */
 	.home-slides li .slide-content {
 		width: 85%;
-		height: 150px;
 		padding: 15px 15% 15px 15px;
-		}
-
-	.entry-media.home .r_slides_tabs,
-	.entry-media > a.prev,
-	.entry-media > a.next { display: none;/* top: 18%; */ }
-
-
+	}
 
 	.home-about .image {
 		position: static;

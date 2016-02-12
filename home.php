@@ -9,18 +9,18 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-			
-			<?php 
+
+			<?php
 			$args = array('pagename'=>'home');
 			$home_page = new WP_Query($args);
 			while ($home_page->have_posts()) : $home_page->the_post();
 			?>
 			<div class="entry-media home bg-80 teal-hover">
 				<?php if(get_field('home_page_slides')) : ?>
-				<ul class="home-slides">
+				<ul class="home-slides" data-slick='{ "prevArrow": ".slick-nav.prev", "nextArrow": ".slick-nav.next" }'>
 					<?php while (has_sub_field('home_page_slides')) : ?>
-						<?php 
-						$post_object = get_sub_field('home_slide_link_object'); 
+						<?php
+						$post_object = get_sub_field('home_slide_link_object');
 						$post_link = $post_object->guid;
 						$post_title = $post_object->post_title;
 						?>
@@ -28,7 +28,9 @@ get_header(); ?>
 							<div class="slide-image bg-86"><img src="<?php the_sub_field('home_slide_image'); ?>" alt="home slide image" /></div>
 							<div class="slide-content">
 								<?php if (get_sub_field('home_slide_title')) : ?>
-								<h2><a href="<?php echo($post_link); ?>" title="<?php echo($post_title); ?>"><?php the_sub_field('home_slide_title'); ?></a></h2>
+								<div class="h2">
+									<a href="<?php echo($post_link); ?>" title="<?php echo($post_title); ?>"><?php the_sub_field('home_slide_title'); ?></a>
+								</div>
 								<?php endif; ?>
 								<?php if (get_sub_field('home_slide_content_image')) { ?>
 								<div class="sponsor">
@@ -41,10 +43,12 @@ get_header(); ?>
 						</li>
 					<?php endwhile; ?>
 				</ul>
+				<a href="#" class="slick-nav prev">Previous</a>
+				<a href="#" class="slick-nav next">Next</a>
 				<?php endif; ?>
 			</div>
 			<?php endwhile; ?>
-			
+
 			<div class="home-features clear">
 				<div class="archives feature width-25">
 				<?php get_template_part('module-archives'); ?>
@@ -56,10 +60,10 @@ get_header(); ?>
 				<?php get_template_part('module-news'); ?>
 				</div>
 			</div>
-			
-			
+
+
 			<div class="home-about clear">
-					<?php 
+					<?php
 					$args = array('pagename'=>'home');
 					$home_page = new WP_Query($args);
 					while ($home_page->have_posts()) : $home_page->the_post();
@@ -72,9 +76,9 @@ get_header(); ?>
 					<div class="image width-25"><img src="<?php the_field('home_about_image'); ?>" alt="about national board of review image"/></div>
 					<?php endwhile; ?>
 			</div>
-			
-			
-			
+
+
+
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
