@@ -2037,6 +2037,11 @@ GENERAL PAGE/POST STYLES
   height: 100%;
   background-color: #2e2e2e;
 }
+@media screen and (max-width: 580px) {
+  .entry-media.gala.grid-view:after {
+    display: none;
+  }
+}
 
 .grid-view .gala-slideshow li {
   position: relative;
@@ -2047,6 +2052,11 @@ GENERAL PAGE/POST STYLES
 }
 .grid-view .gala-slideshow li:nth-child(2n-1) {
   clear: left;
+}
+@media screen and (max-width: 580px) {
+  .grid-view .gala-slideshow li {
+    width: 100%;
+  }
 }
 .grid-view .gala-slideshow li .image {
   padding: 0;

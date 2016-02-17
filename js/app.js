@@ -2876,7 +2876,7 @@
 
 (function($){
 
-    if ( $('body').hasClass('single-galas') && !Modernizr.touchevents ) {
+    if ( $('body').hasClass('single-galas') ) {
 
         var $thumbNav = $('.thumb-nav'),
             $entryMedia = $('.entry-media.gala'),
