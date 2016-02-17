@@ -45,14 +45,14 @@ get_header(); ?>
 						</div>
 					<?php endif; ?>
 
-					<div class="share-button-wrap twitter">
+					<div class="share-button-wrap expandable twitter">
 						<span class="icon">Twitter</span>
 						<span class="link">
 							<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="<?php echo 'Great photos from the #NBRGala! H/t to @NBRfilm '; ?>">Tweet</a>
 							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 						</span>
 					</div>
-					<div class="share-button-wrap facebook">
+					<div class="share-button-wrap expandable facebook">
 						<span class="icon">Facebook</span>
 						<span class="link">
 							<div class="fb-share-button" data-href="<?php echo get_permalink(); ?>" data-type="button_count"></div>
@@ -61,19 +61,6 @@ get_header(); ?>
 
 					<div class="share-button-wrap email">
 						<a href="mailto:?subject=National%20Board%20of%20Review%20|%20<?php the_title(); ?>&amp;body=<?php the_permalink(); ?>" class="icon">Email</a>
-					</div>
-
-					<div class="thumb-nav">
-						<ul class="gala_slides_tabs" data-slick='{ "prevArrow": ".thumb-nav.prev", "nextArrow": ".thumb-nav.next" }'>
-							<?php while(has_sub_field('gala_slideshow')): ?>
-							<li>
-								<?php $image = get_sub_field('gala_image'); $url = $image['url']; ?>
-								<a href="#" style="background-image: url('<?php echo($url); ?>');"></a>
-							</li>
-							<?php endwhile; ?>
-						</ul>
-						<a href="#" class="slick-nav thumb-nav prev yellow-hover">Previous</a>
-						<a href="#" class="slick-nav thumb-nav next yellow-hover">Next</a>
 					</div>
 				</div>
 			</div>
@@ -95,7 +82,7 @@ get_header(); ?>
 			</div>
 		</header>
 
-		<div class="entry-media gala clear">
+		<div class="entry-media gala slide-view clear">
 
 			<ul class="gala-slideshow bg-86 clear" data-slick='{ "prevArrow": ".main-slick-nav.prev", "nextArrow": ".main-slick-nav.next" }'>
 				<?php while(has_sub_field('gala_slideshow')): ?>
@@ -109,7 +96,7 @@ get_header(); ?>
 					<li>
 						<div class="image bg-82">
 							<div class="image-wrapper">
-								<img src="<?php echo($url); ?>" alt="<?php if($alt){echo($alt);} else {echo($title);} ?>" title="<?php echo($title); ?>" />
+								<img data-lazy="<?php echo($url); ?>" alt="<?php if($alt){echo($alt);} else {echo($title);} ?>" title="<?php echo($title); ?>" />
 							</div>
 						</div>
 						<div class="title-caption">
@@ -121,7 +108,30 @@ get_header(); ?>
 			</ul>
 			<a href="#" class="slick-nav main-slick-nav prev">Previous</a>
 			<a href="#" class="slick-nav main-slick-nav next">Next</a>
+			<span class="slide-count"><span class="current-slide">1</span>/<span class="total"><?php echo count( get_field('gala_slideshow') ); ?></span></span>
 		</div>
+
+		<div class="thumb-nav slide-view bg-86">
+			<ul class="gala_slides_tabs" data-slick='{ "prevArrow": ".gala-thumb-nav.prev", "nextArrow": ".gala-thumb-nav.next" }'>
+				<?php while(has_sub_field('gala_slideshow')): ?>
+				<li>
+					<?php
+					$image = get_sub_field('gala_image');
+					$url = $image['sizes']['thumbnail'];
+					$alt = $image['alt'];
+					$width = $image['sizes']['thumbnail-width'];
+					?>
+					<a href="#">
+						<img data-lazy="<?php echo($url); ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" />
+					</a>
+				</li>
+				<?php endwhile; ?>
+			</ul>
+			<a href="#" class="slick-nav gala-thumb-nav prev yellow-hover">Previous</a>
+			<a href="#" class="slick-nav gala-thumb-nav next yellow-hover">Next</a>
+		</div>
+
+		<a href="#" class="toggle_images">See all photos</a>
 
 		<div class="width-50 bg-80">
 			<div class="entry-content">
