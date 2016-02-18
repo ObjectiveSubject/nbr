@@ -17,7 +17,7 @@ get_header(); ?>
 			?>
 			<div class="entry-media home bg-80 teal-hover">
 				<?php if(get_field('home_page_slides')) : ?>
-				<ul class="home-slides" data-slick='{ "prevArrow": ".slick-nav.prev", "nextArrow": ".slick-nav.next" }'>
+				<ul class="home-slides nbr-slider" data-slick='{ "prevArrow": ".slick-nav.prev", "nextArrow": ".slick-nav.next" }'>
 					<?php while (has_sub_field('home_page_slides')) : ?>
 						<?php
 						$post_object = get_sub_field('home_slide_link_object');
@@ -43,8 +43,10 @@ get_header(); ?>
 						</li>
 					<?php endwhile; ?>
 				</ul>
-				<a href="#" class="slick-nav prev">Previous</a>
-				<a href="#" class="slick-nav next">Next</a>
+				<div class="slick-nav-arrows">
+					<a href="#" class="slick-nav prev">Previous</a>
+					<a href="#" class="slick-nav next">Next</a>
+				</div>
 				<?php endif; ?>
 			</div>
 			<?php endwhile; ?>

@@ -84,7 +84,7 @@ get_header(); ?>
 
 		<div class="entry-media gala slide-view clear">
 
-			<ul class="gala-slideshow bg-86 clear" data-slick='{ "prevArrow": ".main-slick-nav.prev", "nextArrow": ".main-slick-nav.next" }'>
+			<ul class="gala-slideshow nbr-slider bg-86 clear" data-slick='{ "prevArrow": ".main-slick-nav.prev", "nextArrow": ".main-slick-nav.next" }'>
 				<?php while(has_sub_field('gala_slideshow')): ?>
 					<?php
 					$image = get_sub_field('gala_image');
@@ -106,32 +106,35 @@ get_header(); ?>
 					</li>
 				<?php endwhile; ?>
 			</ul>
-			<a href="#" class="slick-nav main-slick-nav prev">Previous</a>
-			<a href="#" class="slick-nav main-slick-nav next">Next</a>
+			<div class="slick-nav-arrows">
+				<a href="#" class="slick-nav main-slick-nav prev">Previous</a>
+				<a href="#" class="slick-nav main-slick-nav next">Next</a>
+			</div>
 			<span class="slide-count"><span class="current-slide">1</span>/<span class="total"><?php echo count( get_field('gala_slideshow') ); ?></span></span>
-		</div>
 
-		<div class="thumb-nav slide-view bg-86">
-			<ul class="gala_slides_tabs" data-slick='{ "prevArrow": ".gala-thumb-nav.prev", "nextArrow": ".gala-thumb-nav.next" }'>
-				<?php while(has_sub_field('gala_slideshow')): ?>
-				<li>
-					<?php
-					$image = get_sub_field('gala_image');
-					$url = $image['sizes']['thumbnail'];
-					$alt = $image['alt'];
-					$width = $image['sizes']['thumbnail-width'];
-					?>
-					<a href="#">
-						<img data-lazy="<?php echo($url); ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" />
-					</a>
-				</li>
-				<?php endwhile; ?>
-			</ul>
-			<a href="#" class="slick-nav gala-thumb-nav prev yellow-hover">Previous</a>
-			<a href="#" class="slick-nav gala-thumb-nav next yellow-hover">Next</a>
-		</div>
+			<div class="thumb-nav slide-view bg-86">
+				<ul class="gala_slides_tabs" data-slick='{ "prevArrow": ".gala-thumb-nav.prev", "nextArrow": ".gala-thumb-nav.next" }'>
+					<?php while(has_sub_field('gala_slideshow')): ?>
+					<li>
+						<?php
+						$image = get_sub_field('gala_image');
+						$url = $image['sizes']['thumbnail'];
+						$alt = $image['alt'];
+						$width = $image['sizes']['thumbnail-width'];
+						?>
+						<a href="#">
+							<img data-lazy="<?php echo($url); ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" />
+						</a>
+					</li>
+					<?php endwhile; ?>
+				</ul>
+				<a href="#" class="slick-nav gala-thumb-nav prev yellow-hover">Previous</a>
+				<a href="#" class="slick-nav gala-thumb-nav next yellow-hover">Next</a>
+			</div>
 
-		<a href="#" class="toggle_images">See all photos</a>
+			<a href="#" class="toggle_images">See all photos</a>
+
+		</div>
 
 		<div class="width-50 bg-80">
 			<div class="entry-content">

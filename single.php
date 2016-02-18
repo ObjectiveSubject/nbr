@@ -38,18 +38,24 @@ get_header(); ?>
 
 			<div class="entry-media post">
 				<?php if(get_field('feature_slideshow_images')): ?>
-				<ul class="post-slides" data-slick='{ "prevArrow": ".slick-nav.prev", "nextArrow": ".slick-nav.next" }'>
+				<ul class="post-slides nbr-slider" data-slick='{ "prevArrow": ".slick-nav.prev", "nextArrow": ".slick-nav.next" }'>
 					<?php while(has_sub_field('feature_slideshow_images')): ?>
 					<li>
-						<img src="<?php the_sub_field('feature_slideshow_image'); ?>" alt="slideshow image"/>
+						<div class="image bg-80">
+							<div class="image-wrapper">
+								<img src="<?php the_sub_field('feature_slideshow_image'); ?>" alt="slideshow image"/>
+							</div>
+						</div>
 						<?php if (get_sub_field('feature_slideshow_image_caption')) : ?>
-						<div class="caption"><?php the_sub_field('feature_slideshow_image_caption'); ?></div>
+						<div class="caption bg-12"><?php the_sub_field('feature_slideshow_image_caption'); ?></div>
 						<?php endif; ?>
 					</li>
 					<?php endwhile; ?>
 				</ul>
-				<a href="#" class="slick-nav prev">Previous</a>
-				<a href="#" class="slick-nav next">Next</a>
+				<div class="slick-nav-arrows">
+					<a href="#" class="slick-nav prev">Previous</a>
+					<a href="#" class="slick-nav next">Next</a>
+				</div>
 				<?php endif; ?>
 			</div>
 
