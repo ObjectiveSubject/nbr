@@ -6,6 +6,7 @@ GENERAL PAGE/POST STYLES
 
 .entry-media {
 	position: relative;
+	z-index: 1;
 
 	img {
 		display: block;
@@ -245,6 +246,7 @@ GENERAL PAGE/POST STYLES
 -------------------------------------------------------------- */
 .gala-header {
 	position: relative;
+	z-index: 2;
 	}
 
 	.gala-header .page-header {
