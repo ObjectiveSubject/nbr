@@ -1,5 +1,38 @@
 <?php
 
+/* Student Grant Awards
+-------------------------------------------------- */
+add_action('init', 'register_student_awards');
+
+function register_student_awards() {
+	register_taxonomy( 'student_award',array (
+		  0 => 'student-grants',
+		),
+		array(
+			'hierarchical' => true,
+			'label' => 'Student Awards',
+			'show_ui' => true,
+			'query_var' => true,
+			'rewrite' => array( 'slug' => 'student-grants/awards' ),
+			'show_admin_column' => true,
+			'labels' => array (
+			  'search_items' => 'Search Student Awards',
+			  'popular_items' => 'Popular Student Awards',
+			  'all_items' => 'All Student Awards',
+			  'parent_item' => 'Parent Student Award',
+			  'parent_item_colon' => 'Parent Student Award:',
+			  'edit_item' => 'Edit Student Award',
+			  'update_item' => 'Update Student Award',
+			  'add_new_item' => 'Add new Student Award',
+			  'new_item_name' => 'New Student Award name',
+			  'separate_items_with_commas' => 'Separate Student Awards with commas',
+			  'add_or_remove_items' => 'Add or remove Student Awards',
+			  'choose_from_most_used' => 'Choose from most used Student Awards',
+			)
+		)
+	);
+}
+
 /* Schools
 -------------------------------------------------- */
 add_action('init', 'cptui_register_my_taxes_schools');
@@ -28,8 +61,8 @@ function cptui_register_my_taxes_schools() {
 			  'add_or_remove_items' => 'Add or remove Schools',
 			  'choose_from_most_used' => 'Choose from most used Schools',
 			)
-		) 
-	); 
+		)
+	);
 }
 
 /* grant-year
@@ -61,8 +94,8 @@ function cptui_register_my_taxes_grant_year() {
 			  'add_or_remove_items' => 'Add or remove Grant Years',
 			  'choose_from_most_used' => 'Choose from most used Grant Years',
 			)
-		) 
-	); 
+		)
+	);
 }
 
 /* award-years
@@ -93,7 +126,7 @@ array( 'hierarchical' => true,
 	  'add_or_remove_items' => 'Add or remove Award Years',
 	  'choose_from_most_used' => 'Choose from most used Award Years',
 	)
-) ); 
+) );
 }
 
 /* award-formats
@@ -122,7 +155,7 @@ array( 'hierarchical' => true,
 	  'add_or_remove_items' => 'Add or remove Award Formats',
 	  'choose_from_most_used' => 'Choose from most used Award Formats',
 	)
-) ); 
+) );
 }
 
 /* award-names
@@ -151,7 +184,7 @@ array( 'hierarchical' => true,
 	  'add_or_remove_items' => 'Add or remove Award Names',
 	  'choose_from_most_used' => 'Choose from most used Award Names',
 	)
-) ); 
+) );
 }
 
 /* partner-year
@@ -181,7 +214,7 @@ array( 'hierarchical' => true,
 	  'add_or_remove_items' => 'Add or remove Partner Years',
 	  'choose_from_most_used' => 'Choose from most used Partner Years',
 )
-) ); 
+) );
 }
 
 /* partner-type
@@ -213,8 +246,8 @@ function cptui_register_my_taxes_partner_type() {
 			  'add_or_remove_items' => 'Add or remove Partner Types',
 			  'choose_from_most_used' => 'Choose from most used Partner Types',
 			)
-		) 
-	); 
+		)
+	);
 }
 
 
