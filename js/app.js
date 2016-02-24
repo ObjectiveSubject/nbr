@@ -3059,7 +3059,7 @@
 
         }
 
-    })
+    });
 
     $(".post-slides").each(function(){
 

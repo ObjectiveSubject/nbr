@@ -23,7 +23,7 @@
 
         }
 
-    })
+    });
 
     $(".post-slides").each(function(){
 
