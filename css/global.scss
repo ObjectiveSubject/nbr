@@ -1,6 +1,15 @@
 /* =Global
 ----------------------------------------------- */
 
+::-moz-selection { /* Code for Firefox */
+    color: #2b2b2b;
+    background: white;
+}
+::selection {
+	color: #2b2b2b;
+    background: white;
+}
+
 body,
 button,
 input,
@@ -553,23 +562,47 @@ object {
 
 /* Page/Post Header
 ------------------------- */
-.page-header { padding: 2.5%; overflow: hidden; }
-	.width-75 .page-header { padding: 3.333%; }
-	.width-66 .page-header { padding: 3.75%; }
-	.width-50 .page-header { padding: 5%; }
-	.width-33 .page-header { padding: 7.5%; }
-	.width-25 .page-header { padding: 10%; }
-	.page-header .page-title { margin: 0; }
+.page-header {
+	padding: 2.5%;
+	overflow: hidden;
+	&.bleed {
+		padding: 0;
+	}
+	&.flex {
+		@include display(flex);
+		@include align-items(stretch);
+		@media screen and (max-width: $lg){
+			@include display(block);
+		}
+	}
+
+	.width-75 & { padding: 3.333%; }
+	.width-66 & { padding: 3.75%; }
+	.width-50 & { padding: 5%; }
+	.width-33 & { padding: 7.5%; }
+	.width-25 & { padding: 10%; }
+
+	.page-title { margin: 0; }
+}
+
+.wrapper {
+	.header-half & {
+		padding: 5%;
+		@media screen and (max-width: $lg) {
+			padding: 2.5%;
+		}
+	}
+}
 
 /* Header Partner Listings
 ------------------------- */
 .page-header .partners {
-	margin: 0 0 1em 0;
-	padding: 10px;
+	// margin: 0 0 1em 0;
+	// padding: 10px;
 	}
 	.page-header .module-label {
-		margin: 1em 0;
-		color: #999;
+		margin: 0.75em 0;
+		color: #7F7F7F;
 	}
 	.page-header .partner {
 		display: inline-block;
@@ -609,7 +642,13 @@ object {
 }
 
 .view-all-page,
-.view-all-drawer { display: block; color: #777; width: 100%; text-transform: uppercase; cursor: pointer; }
+.view-all-drawer {
+	display: block;
+	color: #7F7F7F;
+	width: 100%;
+	text-transform: uppercase;
+	cursor: pointer;
+}
 
 .blue-hover:hover .view-all-page, .blue-hover:hover .view-all-drawer,
 .dark-blue-hover:hover .view-all-page, .dark-blue-hover:hover .view-all-drawer,

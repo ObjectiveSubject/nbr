@@ -164,6 +164,17 @@ a img {
 
 /* =Global
 ----------------------------------------------- */
+::-moz-selection {
+  /* Code for Firefox */
+  color: #2b2b2b;
+  background: white;
+}
+
+::selection {
+  color: #2b2b2b;
+  background: white;
+}
+
 body,
 button,
 input,
@@ -809,41 +820,65 @@ object {
   padding: 2.5%;
   overflow: hidden;
 }
-
+.page-header.bleed {
+  padding: 0;
+}
+.page-header.flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  box-align: stretch;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  -ms-align-items: stretch;
+  -o-align-items: stretch;
+  align-items: stretch;
+  -ms-flex-align: stretch;
+}
+@media screen and (max-width: 900px) {
+  .page-header.flex {
+    display: block;
+  }
+}
 .width-75 .page-header {
   padding: 3.333%;
 }
-
 .width-66 .page-header {
   padding: 3.75%;
 }
-
 .width-50 .page-header {
   padding: 5%;
 }
-
 .width-33 .page-header {
   padding: 7.5%;
 }
-
 .width-25 .page-header {
   padding: 10%;
 }
-
 .page-header .page-title {
   margin: 0;
 }
 
-/* Header Partner Listings
-------------------------- */
-.page-header .partners {
-  margin: 0 0 1em 0;
-  padding: 10px;
+.header-half .wrapper {
+  padding: 5%;
+}
+@media screen and (max-width: 900px) {
+  .header-half .wrapper {
+    padding: 2.5%;
+  }
 }
 
+/* Header Partner Listings
+------------------------- */
 .page-header .module-label {
-  margin: 1em 0;
-  color: #999;
+  margin: 0.75em 0;
+  color: #7F7F7F;
 }
 
 .page-header .partner {
@@ -894,7 +929,7 @@ object {
 .view-all-page,
 .view-all-drawer {
   display: block;
-  color: #777;
+  color: #7F7F7F;
   width: 100%;
   text-transform: uppercase;
   cursor: pointer;
@@ -2508,6 +2543,10 @@ GENERAL PAGE/POST STYLES
     float: none;
     margin-right: 0;
   }
+}
+
+.grant-tax-list {
+  margin: 12px 0 0;
 }
 
 .term-marion-carter-green-award .page-title {

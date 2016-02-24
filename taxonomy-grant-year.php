@@ -9,58 +9,72 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area bg-76">
+	<?php
+		$grant_years = get_terms('grant-year', array('order'=>'DESC'));
+		$grant_schools = get_terms('schools');
+		$awards = get_terms('student_award');
+		$this_year = single_term_title( '', false );
+		$has_partners = false;
+		while ( have_posts() ) : the_post();
+			if ( get_post_type() == 'partners' ) {
+				$has_partners = true;
+				break;
+			}
+		endwhile; rewind_posts();
+	?>
+
+	<section id="primary" class="content-area bg-80">
 		<div id="content" class="site-content" role="main">
 
-			<?php
-			$grant_years = get_terms('grant-year', array('order'=>'DESC'));
-			$grant_schools = get_terms('schools');
-			$awards = get_terms('student_award');
-			$this_year = single_term_title( '', false );
-			?>
-			<header class="page-header bg-70">
-				<h1 class="page-title"><?php echo $this_year; ?> Student Grant Awardees</h1>
+			<header class="page-header flex bleed bg-70">
 
-				<?php // Partners --------------------- //
-				$has_partners = false;
+				<div class="header-half width-50">
+					<div class="wrapper">
+						<h1 class="page-title"><?php echo $this_year; ?> Student Grant Awardees</h1>
+						<ul class="grant-tax-list clear">
+							<li class="grant-tax">
+								<ul class="grant-year-list drawer">
+									<?php foreach ( $grant_years as $grant_year ) { ?>
+									<li><a href="<?php echo(site_url('/student-grants/grant-year/' . $grant_year->slug)); ?>"><?php echo($grant_year->name) ?></a></li>
+									<?php } ?>
+								</ul>
+								<a href="#" class="view-all-drawer">View All Years</a>
+							</li>
+							<li class="grant-tax">
+								<ul class="grant-school-list drawer">
+									<?php foreach ( $grant_schools as $grant_school ) { ?>
+									<li><a href="<?php echo(site_url('/student-grants/schools/' . $grant_school->slug)); ?>"><?php echo($grant_school->name) ?></a></li>
+									<?php } ?>
+								</ul>
+								<a href="#" class="view-all-drawer">View All Schools</a>
+							</li>
+							<li class="grant-tax">
+								<ul class="student-award-list drawer">
+									<?php foreach ( $awards as $award ) { ?>
+									<li><a href="<?php echo(site_url('/student-grants/awards/' . $award->slug)); ?>"><?php echo($award->name) ?></a></li>
+									<?php } ?>
+								</ul>
+								<a href="#" class="view-all-drawer">View All Awards</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 
-				while ( have_posts() ) : the_post();
-					if (get_post_type() == 'partners') {
-						$has_partners = true;
-						break;
-					}
-				endwhile; rewind_posts(); ?>
-
-				<?php if ($has_partners) : ?>
-				<h6 class="module-label">In association with</h6>
-				<div class="partners clear bg-76">
-					<?php while ( have_posts() ) : the_post(); ?>
-						<?php if (get_post_type() == 'partners') : ?>
-						<a href="<?php echo site_url('/partners/'.$this_year); ?>" class="partner"><img src="<?php the_field('partner_logo'); ?>"/></a>
-						<?php endif; ?>
-					<?php endwhile; rewind_posts(); ?>
+				<?php if ( $has_partners ) : ?>
+				<div class="header-half grant-partners width-50 bg-76">
+					<div class="wrapper">
+						<p class="module-label uppercase">In association with</p>
+						<div class="partners clear">
+							<?php while ( have_posts() ) : the_post(); ?>
+								<?php if (get_post_type() == 'partners') : ?>
+								<a href="<?php echo site_url('/partners/'.$this_year); ?>" class="partner"><img src="<?php the_field('partner_logo'); ?>"/></a>
+								<?php endif; ?>
+							<?php endwhile; rewind_posts(); ?>
+						</div>
+					</div>
 				</div>
 				<?php endif; ?>
 
-				<?php // Grant Years & Schools -------- // ?>
-				<ul class="grant-tax-list clear">
-					<li class="grant-tax">
-						<ul class="grant-year-list drawer">
-							<?php foreach ($grant_years as $grant_year) { ?>
-							<li><a href="<?php echo(site_url('/student-grants/grant-year/' . $grant_year->slug)); ?>"><?php echo($grant_year->name) ?></a></li>
-							<?php } ?>
-						</ul>
-						<a href="#" class="view-all-drawer">View All Years</a>
-					</li>
-					<li class="grant-tax">
-						<ul class="grant-school-list drawer">
-							<?php foreach ($grant_schools as $grant_school) { ?>
-							<li><a href="<?php echo(site_url('/student-grants/schools/' . $grant_school->slug)); ?>"><?php echo($grant_school->name) ?></a></li>
-							<?php } ?>
-						</ul>
-						<a href="#" class="view-all-drawer">View All Schools</a>
-					</li>
-				</ul>
 			</header><!-- .page-header -->
 
 			<?php // Grant Winners ------------------ // ?>
