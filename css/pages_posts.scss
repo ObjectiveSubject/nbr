@@ -619,51 +619,12 @@ GENERAL PAGE/POST STYLES
 			font-weight: normal;
 			}
 
-/* STUDENT GRANT ARCHIVE (GRANT YEARS AND SCHOOLS)
+/* STUDENT GRANT ARCHIVE (GRANT YEARS, SCHOOLS, & AWARDS)
 --------------------------------------------------------------
 -------------------------------------------------------------- */
 
 /* Student/Film List */
-.archive .student-grants {
-	width: 49.9%;
-	float: left;
-	margin: 0;
-	height: 220px;
-	border-bottom: 1px solid #2E2E2E;
-	border-right: 1px solid #2E2E2E;
-	font-size: 1.3em;
-	&.even {
-		border-right: none;
-	}
-	@media screen and (max-width: 540px) {
-		width: 100%;
-		border-right: none;
-	}
-}
-
-	.student-grants .wrapper { padding: 5%; }
-		.student-grants .project-image {
-			overflow: hidden;
-			float: left;
-			width: 25%;
-			margin-right: 5%;
-			min-height: 160px;
-			}
-			.student-grants .project-image.placeholder { opacity: .15; }
-			.student-grants:hover .project-image.placeholder { opacity: .5; }
-
-		.student-grants p {
-			margin: 0 0 5px 0;
-			line-height: 1.25em;
-		}
-
-
-
-
-/* STUDENT AWARDS ARCHIVE
---------------------------------------------------------------
--------------------------------------------------------------- */
-.tax-student_award {
+.archive {
 	.award-content {
 		font-size: 20px;
 		@media screen and (max-width: $lg) {
@@ -695,6 +656,61 @@ GENERAL PAGE/POST STYLES
 	.term-senior-post-award & {
 		color: $senior-post;
 	}
+}
+
+.student-grants {
+	width: 49.9%;
+	float: left;
+	margin: 0;
+	height: 220px;
+	border-bottom: 1px solid #2E2E2E;
+	border-right: 1px solid #2E2E2E;
+	font-size: 1.3em;
+	@include transition(background-color 300ms ease);
+	@media screen and (max-width: 540px) {
+		width: 100%;
+		border-right: none;
+	}
+	&.even {
+		border-right: none;
+	}
+	&:hover {
+		background-color: #2e2e2e;
+		color: white;
+		.project-image.placeholder { opacity: .5; }
+	}
+
+	.wrapper { padding: 5%; }
+
+	.project-image {
+		overflow: hidden;
+		float: left;
+		width: 25%;
+		margin-right: 5%;
+		min-height: 160px;
+	}
+
+	.project-image.placeholder { opacity: .15; }
+
+	p {
+		margin-bottom: 5px;
+		line-height: 1.25em;
+		@include transition(color 300ms ease);
+	}
+
+	&.student_award-marion-carter-green-award:hover { background-color: $marion-carter-green; color: white; }
+	&.student_award-light-iron-award:hover { background-color: $light-iron; color: #2e2e2e; }
+	&.student_award-senior-post-award:hover { background-color: $senior-post; color: white; }
+}
+
+.project-award {
+	.student_award-marion-carter-green-award & { color: $marion-carter-green; }
+	.student_award-light-iron-award & { color: $light-iron; }
+	.student_award-senior-post-award & { color: $senior-post; }
+
+	.student_award-marion-carter-green-award:hover & { color: white; }
+	.student_award-light-iron-award:hover & { color: #2e2e2e; }
+	.student_award-senior-post-award:hover & { color: white; }
 }
 
 

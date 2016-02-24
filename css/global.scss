@@ -413,26 +413,6 @@ object {
 }
 
 
-/* =Navigation
------------------------------------------------ */
-
-/*
-.site-content [class*="navigation"] {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
-[class*="navigation"] .nav-previous {
-	float: left;
-	width: 50%;
-}
-[class*="navigation"] .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}
-*/
-
-
 /* PAGE
 -----------------------------------------------
 ----------------------------------------------- */
@@ -628,39 +608,8 @@ object {
 	margin: 0 0 1.5em;
 }
 
-/*
-.view-all {
-	-webkit-transition: all 250ms ease;
-	-moz-transition: all 250ms ease;
-	-ms-transition: all 250ms ease;
-	-o-transition: all 250ms ease;
-	transition: all 250ms ease;
-	}
-	.view-all:hover { color: white; }
-*/
-
-		.view-all-page,
-		.view-all-drawer { display: block; color: #777; width: 100%; text-transform: uppercase; cursor: pointer; }
-/*
-		.drawer > span { text-transform: uppercase; font-size: .875em; cursor: pointer; }
-
-		.drawer span:after {
-			content: "";
-			display: block;
-			float: right;
-			width: 18px; height: 9px;
-			margin: 4px 0 0 15px;
-			background: url('images/dn_arrow.png') left top no-repeat;
-			opacity: .3;
-			-webkit-transition: all 250ms ease;
-			-moz-transition: all 250ms ease;
-			-ms-transition: all 250ms ease;
-			-o-transition: all 250ms ease;
-			transition: all 250ms ease;
-			}
-			.drawer:hover span:after { opacity: 1; }
-*/
-
+.view-all-page,
+.view-all-drawer { display: block; color: #777; width: 100%; text-transform: uppercase; cursor: pointer; }
 
 .blue-hover:hover .view-all-page, .blue-hover:hover .view-all-drawer,
 .dark-blue-hover:hover .view-all-page, .dark-blue-hover:hover .view-all-drawer,
@@ -672,17 +621,26 @@ object {
 .big {
 	font-size: 125%;
 	line-height: 1.2em;
-	}
+}
 .small {
-	font-size: 70%;
-	}
+	font-size: 13px;
+}
 .uppercase {
 	text-transform: uppercase;
-	}
+}
 .faded-text {
 	color: #777;
-	}
-.faded { opacity: .25; }
+}
+.faded {
+	opacity: .25;
+}
+
+.push {
+	margin-top: 20px;
+}
+.push-double {
+	margin-top: 40px;
+}
 
 .drawer {
 	overflow: hidden;

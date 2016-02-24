@@ -38,29 +38,32 @@ get_header(); ?>
 					$post_grant_schools = get_the_terms( $post->ID, 'schools' );
 					$grant_years = get_the_terms( $post->ID, 'grant-year' ); ?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('green-hover '.$evenodd); ?>>
+					<article id="post-<?php the_ID(); ?>" <?php post_class($evenodd); ?>>
 					<div class="wrapper clear">
 
 						<?php if (get_field('project_still_frame')) : ?>
-						<div class="project-image"><a href="<?php the_permalink(); ?>">
-							<img src="<?php the_field('project_still_frame'); ?>" alt="Student Grant" />
-						</a></div>
+							<div class="project-image"><a href="<?php the_permalink(); ?>">
+								<img src="<?php the_field('project_still_frame'); ?>" alt="Student Grant" />
+							</a></div>
 						<?php else : ?>
-						<div class="project-image placeholder">
-							<img src="<?php echo(get_template_directory_uri().'/images/monogram.png'); ?>" alt="Student Grant Still Project Still Frame" />
-						</div>
+							<div class="project-image placeholder">
+								<img src="<?php echo(get_template_directory_uri().'/images/monogram.png'); ?>" alt="Student Grant Still Project Still Frame" />
+							</div>
 						<?php endif; ?>
 
-						<?php foreach ( $grant_years as $grant_year ) { ?>
-						<p class="project-year small"><a href="<?php echo(site_url('/student-grants/grant-year/' . $grant_year->slug)); ?>"><?php echo( $grant_year->name ); ?></a></p>
-						<?php } ?>
+						<?php if ( $grant_years ) : ?>
+							<?php foreach ( $grant_years as $grant_year ) { ?>
+								<p class="project-year small"><a href="<?php echo(site_url('/student-grants/grant-year/' . $grant_year->slug)); ?>"><?php echo( $grant_year->name ); ?></a></p>
+							<?php } ?>
+						<?php endif; ?>
 
-						<?php foreach ( $post_grant_schools as $post_grant_school ) { ?>
-						<p class="project-school small uppercase"><a href="<?php echo(site_url('/student-grants/schools/' . $post_grant_school->slug)); ?>"><?php echo( $post_grant_school->name ); ?></a></p>
-						<?php } ?>
+						<?php if ( $post_grant_schools ) : ?>
+							<?php foreach ( $post_grant_schools as $post_grant_school ) { ?>
+								<p class="project-school small uppercase"><a href="<?php echo(site_url('/student-grants/schools/' . $post_grant_school->slug)); ?>"><?php echo( $post_grant_school->name ); ?></a></p>
+							<?php } ?>
+						<?php endif; ?>
 
 						<p class="project-author"><?php the_field('project_author'); ?></p>
-
 						<p class="project-title">
 							<?php if(get_field('project_trailer') || get_the_excerpt() || get_the_content() ) { ?>
 								<a href="<?php the_permalink(); ?>"><em><?php the_field('project_title'); ?></em></a>
