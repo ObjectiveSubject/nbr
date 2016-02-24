@@ -69,7 +69,7 @@ get_header(); ?>
 
 						<?php if ( $post_awards ) : ?>
 							<?php foreach ( $post_awards as $post_award ) : ?>
-								<p class="project-award small push uppercase <?php echo $post_award->slug; ?>"><a href="<?php echo(site_url('/student-grants/awards/' . $post_award->slug )); ?>"><?php echo $this_year .' '. $post_award->name; ?> Winner</a></p>
+								<p class="project-award small push uppercase"><a href="<?php echo(site_url('/student-grants/awards/' . $post_award->slug )); ?>"><?php echo $this_year .' '. $post_award->name; ?> Winner</a></p>
 							<?php endforeach; ?>
 						<?php endif; ?>
 					</div>

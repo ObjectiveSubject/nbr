@@ -611,13 +611,22 @@ GENERAL PAGE/POST STYLES
 	padding: 5%;
 	}
 
-.project-details { padding: 10%; }
-	.project-details p { margin: 0; }
-		.project-details p strong {
+.project-details {
+	padding: 10%;
+
+	p {
+		margin: 0;
+		strong {
 			text-transform: uppercase;
-			font-size: .75em;
+			font-size: 13px;
 			font-weight: normal;
-			}
+		}
+	}
+
+	.project-award {
+		color: white;
+	}
+}
 
 /* STUDENT GRANT ARCHIVE (GRANT YEARS, SCHOOLS, & AWARDS)
 --------------------------------------------------------------
@@ -698,19 +707,33 @@ GENERAL PAGE/POST STYLES
 		@include transition(color 300ms ease);
 	}
 
-	&.student_award-marion-carter-green-award:hover { background-color: $marion-carter-green; color: white; }
-	&.student_award-light-iron-award:hover { background-color: $light-iron; color: #2e2e2e; }
-	&.student_award-senior-post-award:hover { background-color: $senior-post; color: white; }
+	&.student_award-marion-carter-green-award:hover {
+		background-color: $marion-carter-green;
+		color: white;
+		.project-award {
+			color: white;
+		}
+	}
+	&.student_award-light-iron-award:hover {
+		background-color: $light-iron;
+		color: #2e2e2e;
+		.project-award {
+			color: #2e2e2e;
+		}
+	}
+	&.student_award-senior-post-award:hover {
+		background-color: $senior-post;
+		color: white;
+		.project-award {
+			color: white;
+		}
+	}
 }
 
 .project-award {
 	.student_award-marion-carter-green-award & { color: $marion-carter-green; }
 	.student_award-light-iron-award & { color: $light-iron; }
 	.student_award-senior-post-award & { color: $senior-post; }
-
-	.student_award-marion-carter-green-award:hover & { color: white; }
-	.student_award-light-iron-award:hover & { color: #2e2e2e; }
-	.student_award-senior-post-award:hover & { color: white; }
 }
 
 

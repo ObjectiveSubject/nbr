@@ -7,24 +7,37 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">	
+	<?php
+	$grant_years = get_the_terms( $post->ID,'grant-year');
+	$post_awards = get_the_terms( $post->ID, 'student_award' );
+	$awards_classes = '';
+	$this_grant_year = '';
+	if ( $grant_years ) {
+		foreach ( $grant_years as $grant_year ) {
+			$this_grant_year = $grant_year->name;
+		}
+	}
+	if ( $post_awards ) {
+		foreach ( $post_awards as $award ) {
+			$awards_classes .= $award->slug . ' ';
+		}
+	} ?>
+
+	<div id="primary" class="content-area <?php echo ( $awards_classes ) ? 'student_award-'. $awards_classes : ''; ?>">
 		<div id="content" class="site-content single-student-grant width-75 bg-76" role="main">
 
-		<?php while ( have_posts() ) : the_post();
-		
-			$grant_years = get_the_terms( $post->ID,'grant-year');
-			foreach ($grant_years as $grant_year) { $this_grant_year = $grant_year->name; }
-			?>
+		<?php while ( have_posts() ) : the_post(); ?>
+
 			<header class="page-header bg-70">
 				<h1 class="page-title"><em><?php the_field('project_title'); ?></em></h1>
 				<h2 class="page-subtitle"><?php the_field('project_subtitle'); ?></h2>
 
 				<?php // Partners --------------------- //
-					if (get_field('partners')) :
+					if ( get_field('partners') ) :
 					$partners = get_field('partners'); ?>
 					<div class="partners clear bg-76">
 						<h6 class="module-label">In association with</h6>
-						<?php foreach ($partners as $partner) : ?>
+						<?php foreach ( $partners as $partner ) : ?>
 						<a href="<?php echo site_url('/partners/'.$this_grant_year); ?>" class="partner"><img src="<?php the_field('partner_logo', $partner->ID); ?>"/></a>
 						<?php endforeach; ?>
 					</div>
@@ -34,14 +47,14 @@ get_header(); ?>
 
 			<?php if ( get_field('project_trailer') || get_field('project_still_frame') ) : ?>
 			<div class="entry-media bg-72">
-				<?php if(get_field('project_trailer')) : ?>
+				<?php if( get_field('project_trailer') ) : ?>
 					<?php the_field('project_trailer'); ?>
-				<?php elseif (get_field('project_still_frame')) : ?>
+				<?php elseif ( get_field('project_still_frame') ) : ?>
 					<img src="<?php the_field('project_still_frame'); ?>" alt="<?php the_field('project_title'); ?> project still frame" />
 				<?php endif; ?>
 			</div>
 			<?php endif; ?>
-			
+
 			<div class="share-grant clear bg-80">
 				<span class="cta">Share this project:&nbsp;&nbsp;&nbsp;</span>
 				<div class="share-button-wrap twitter">
@@ -58,12 +71,11 @@ get_header(); ?>
 					</span>
 				</div>
 				<div class="share-button-wrap email">
-					
 					<a href="mailto:?subject=NBR%20<?php echo $this_grant_year; ?>%20Grant%20Winner%20|%20<?php the_title(); ?>&amp;body=<?php the_permalink(); ?>" class="icon">Email</a>
 				</div>
 			</div>
-			
-			
+
+
 			<?php if ( get_the_excerpt() || get_the_content() ) : ?>
 			<div class="width-66">
 				<div class="entry-summary bg-74">
@@ -74,14 +86,23 @@ get_header(); ?>
 				</div>
 			</div>
 			<?php endif; ?>
-			
-			<?php if(get_field('project_details')) : ?>
+
+
 			<div class="width-33">
+
 				<div class="project-details">
-					<?php the_field('project_details'); ?>
+					<?php if ( $post_awards ) : ?>
+						<p class="small uppercase"><strong>Awarded</strong></p>
+						<?php foreach ( $post_awards as $award ) : ?>
+							<p class="project-award small uppercase"><a href="<?php echo( site_url('/student-grants/awards/' . $award->slug ) ); ?>"><strong><?php echo $this_grant_year .' '. $award->name . ' Winner'; ?></strong></a></p>
+						<?php endforeach; ?>
+						<p>&nbsp;</p>
+					<?php endif; ?>
+					<?php if ( get_field('project_details') ) {
+						the_field('project_details');
+					} ?>
 				</div>
 			</div>
-			<?php endif; ?>
 
 		<?php endwhile; // end of the loop. ?>
 
@@ -91,5 +112,5 @@ get_header(); ?>
 		</div>
 	</div><!-- #primary -->
 
-	
+
 <?php get_footer(); ?>

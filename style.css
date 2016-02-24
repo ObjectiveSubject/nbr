@@ -1606,7 +1606,7 @@ object {
 }
 
 .widget-grants .student-grants a .project-author {
-  color: #777;
+  color: #BFBFBF;
 }
 
 .widget-grants .student-grants a:hover .project-author {
@@ -2474,15 +2474,16 @@ GENERAL PAGE/POST STYLES
 .project-details {
   padding: 10%;
 }
-
 .project-details p {
   margin: 0;
 }
-
 .project-details p strong {
   text-transform: uppercase;
-  font-size: .75em;
+  font-size: 13px;
   font-weight: normal;
+}
+.project-details .project-award {
+  color: white;
 }
 
 /* STUDENT GRANT ARCHIVE (GRANT YEARS, SCHOOLS, & AWARDS)
@@ -2571,12 +2572,21 @@ GENERAL PAGE/POST STYLES
   background-color: #5C91FF;
   color: white;
 }
+.student-grants.student_award-marion-carter-green-award:hover .project-award {
+  color: white;
+}
 .student-grants.student_award-light-iron-award:hover {
   background-color: #FFD24A;
   color: #2e2e2e;
 }
+.student-grants.student_award-light-iron-award:hover .project-award {
+  color: #2e2e2e;
+}
 .student-grants.student_award-senior-post-award:hover {
   background-color: #0093A4;
+  color: white;
+}
+.student-grants.student_award-senior-post-award:hover .project-award {
   color: white;
 }
 
@@ -2588,15 +2598,6 @@ GENERAL PAGE/POST STYLES
 }
 .student_award-senior-post-award .project-award {
   color: #0093A4;
-}
-.student_award-marion-carter-green-award:hover .project-award {
-  color: white;
-}
-.student_award-light-iron-award:hover .project-award {
-  color: #2e2e2e;
-}
-.student_award-senior-post-award:hover .project-award {
-  color: white;
 }
 
 /* FEATURES LANDING PAGE
@@ -3071,10 +3072,8 @@ GENERAL PAGE/POST STYLES
     margin-right: 5%;
   }
 
-  .widget-grants .student-grants a .project-title,
-  .widget-grants .student-grants a .project-author {
-    width: 65%;
-    float: left;
+  .widget-grants .student-grants p {
+    margin-left: 30%;
   }
 
   /* News module --------------------------- */
