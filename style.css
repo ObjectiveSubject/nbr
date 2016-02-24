@@ -598,6 +598,13 @@ a:active {
 
 .wp-caption-text {
   text-align: left;
+  color: #898B8E;
+  font-size: 14px;
+}
+@media screen and (max-width: 900px) {
+  .wp-caption-text {
+    font-size: 16px;
+  }
 }
 
 .wp-caption .wp-caption-text {
@@ -954,7 +961,7 @@ object {
 }
 
 .small {
-  font-size: .875em;
+  font-size: 70%;
 }
 
 .uppercase {
@@ -2519,10 +2526,8 @@ GENERAL PAGE/POST STYLES
 /* STUDENT GRANT ARCHIVE (GRANT YEARS AND SCHOOLS)
 --------------------------------------------------------------
 -------------------------------------------------------------- */
-/* Header */
 /* Student/Film List */
-.tax-grant-year .student-grants,
-.tax-schools .student-grants {
+.archive .student-grants {
   width: 49.9%;
   float: left;
   margin: 0;
@@ -2531,10 +2536,14 @@ GENERAL PAGE/POST STYLES
   border-right: 1px solid #2E2E2E;
   font-size: 1.3em;
 }
-
-.tax-grant-year .student-grants.even,
-.tax-schools .student-grants.even {
+.archive .student-grants.even {
   border-right: none;
+}
+@media screen and (max-width: 540px) {
+  .archive .student-grants {
+    width: 100%;
+    border-right: none;
+  }
 }
 
 .student-grants .wrapper {
@@ -2562,13 +2571,37 @@ GENERAL PAGE/POST STYLES
   line-height: 1.25em;
 }
 
-.student-grants .project-title {
-  font-style: italic;
+/* STUDENT AWARDS ARCHIVE
+--------------------------------------------------------------
+-------------------------------------------------------------- */
+.tax-student_award .award-content {
+  font-size: 20px;
+}
+@media screen and (max-width: 900px) {
+  .tax-student_award .award-content {
+    font-size: 16px;
+  }
+}
+.tax-student_award .award-content .alignleft,
+.tax-student_award .award-content .alignright {
+  display: block;
+}
+@media screen and (max-width: 540px) {
+  .tax-student_award .award-content .alignleft, .tax-student_award .award-content .alignright {
+    max-width: 100%;
+    float: none;
+    margin-right: 0;
+  }
 }
 
-.student-grants .project-school {
-  text-transform: uppercase;
-  font-size: 75%;
+.term-marion-carter-green-award .page-title {
+  color: #5C91FF;
+}
+.term-light-iron-award .page-title {
+  color: #FFD24A;
+}
+.term-senior-post-award .page-title {
+  color: #0093A4;
 }
 
 /* FEATURES LANDING PAGE
@@ -3683,12 +3716,6 @@ GENERAL PAGE/POST STYLES
   /* Single Post -------------------- */
   .entry-media.post > a.prev, .entry-media.post > a.next {
     top: 22.5%;
-  }
-
-  /* Student Grants Page -------------------- */
-  .tax-grant-year .student-grants, .tax-schools .student-grants {
-    width: 100%;
-    border-right: none;
   }
 
   /* Signle Student Grant -------------------- */

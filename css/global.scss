@@ -377,6 +377,11 @@ a:active {
 }
 .wp-caption-text {
 	text-align: left;
+	color: #898B8E;
+	font-size: 14px;
+	@media screen and (max-width: $lg) {
+		font-size: 16px;
+	}
 }
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
@@ -669,7 +674,7 @@ object {
 	line-height: 1.2em;
 	}
 .small {
-	font-size: .875em;
+	font-size: 70%;
 	}
 .uppercase {
 	text-transform: uppercase;
