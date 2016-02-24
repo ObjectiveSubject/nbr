@@ -23,8 +23,8 @@ get_header(); ?>
 		}
 	} ?>
 
-	<div id="primary" class="content-area <?php echo ( $awards_classes ) ? 'student_award-'. $awards_classes : ''; ?>">
-		<div id="content" class="site-content single-student-grant width-75 bg-76" role="main">
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content single-student-grant width-75 bg-76 <?php echo ( $awards_classes ) ? 'student_award-'. $awards_classes : ''; ?>" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
