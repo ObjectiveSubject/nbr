@@ -92,7 +92,7 @@ function cptui_register_my_cpt_awards() {
 			'show_in_menu' => true,
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
-			'hierarchical' => true,
+			'hierarchical' => false,
 			'rewrite' => array('slug' => 'awards', 'with_front' => true),
 			'query_var' => true,
 			'menu_position' => '5',

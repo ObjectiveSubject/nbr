@@ -2316,7 +2316,7 @@ GENERAL PAGE/POST STYLES
   color: white;
 }
 
-.tax-award-years .awards.format-multiple {
+.tax-award-years .awards.award-formats-format-multiple {
   width: 100%;
   float: none;
   height: auto;
@@ -2326,7 +2326,7 @@ GENERAL PAGE/POST STYLES
   padding: 10%;
 }
 
-.tax-award-years .awards.format-multiple .wrapper {
+.tax-award-years .awards.award-formats-format-multiple .wrapper {
   padding: 2.5%;
 }
 
@@ -2378,7 +2378,7 @@ GENERAL PAGE/POST STYLES
   color: white;
 }
 
-.tax-award-names .awards.format-multiple {
+.tax-award-names .awards.award-formats-format-multiple {
   width: 100%;
   float: none;
   height: auto;
@@ -2388,7 +2388,7 @@ GENERAL PAGE/POST STYLES
   padding: 10%;
 }
 
-.tax-award-names .awards.format-multiple .wrapper {
+.tax-award-names .awards.award-formats-format-multiple .wrapper {
   padding: 2.5%;
 }
 

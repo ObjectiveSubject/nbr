@@ -94,9 +94,10 @@ add_action( 'pre_get_posts', 'award_years_archive' );
 
 /* Award Names tax archive */
 function award_names_archive( $query ) {
-    if ( $query->is_tax('award-names') ) {
+    if ( !is_admin() && $query->is_tax('award-names') ) {
         $query->set( 'orderby','title' );
-        $query->set( 'posts_per_page', -1 );
+		$query->set( 'order','DESC' );
+        $query->set( 'posts_per_page', 500 );
     }
 }
 add_action( 'pre_get_posts', 'award_names_archive' );
