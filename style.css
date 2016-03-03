@@ -2031,17 +2031,16 @@ GENERAL PAGE/POST STYLES
   position: relative;
   z-index: 2;
 }
-
 .gala-header .page-header {
   padding-bottom: 0;
 }
-
+@media screen and (max-width: 768px) {
+  .gala-header .page-header {
+    margin-top: 100px;
+  }
+}
 .gala-header .page-title {
   margin-bottom: 0.5em;
-}
-
-.gala-header .partner {
-  width: 33.333%;
 }
 
 .gala-years {
@@ -2050,11 +2049,9 @@ GENERAL PAGE/POST STYLES
   height: 100%;
   z-index: 3;
 }
-
 .gala-years .wrapper {
   padding: 10%;
 }
-
 .gala-years ul {
   position: relative;
   z-index: 2;
@@ -2068,39 +2065,31 @@ GENERAL PAGE/POST STYLES
   margin: 0px 10px 1em 0;
   text-align: left;
 }
-
 .gala-header .share-button-wrap:hover {
   height: 32px;
   width: 130px;
 }
-
 .gala-header .share-button-wrap .icon {
   margin: 0 10px 0 0;
   float: left;
 }
-
 .gala-header .share-button-wrap.facebook .icon {
   background: url("images/social_facebook_white.png") top left no-repeat;
 }
-
 .gala-header .share-button-wrap.twitter .icon {
   background: url("images/social_twitter_white.png") top left no-repeat;
 }
-
 .gala-header .share-button-wrap.email .icon {
   background: url("images/social_email_white.png") top left no-repeat;
 }
-
 .gala-header .share-button-wrap .link {
   display: block;
   float: left;
   width: 76px;
 }
-
 .gala-header .share-button-wrap.facebook .link {
   margin-top: 1px;
 }
-
 .gala-header .share-button-wrap.twitter .link {
   margin-top: 5px;
 }
@@ -3225,10 +3214,6 @@ GENERAL PAGE/POST STYLES
     padding-bottom: 0;
   }
 
-  .gala-header .width-75 {
-    width: 75%;
-  }
-
   .gala-header .award-link {
     font-size: 20px;
   }
@@ -3535,11 +3520,6 @@ GENERAL PAGE/POST STYLES
   }
 
   /* Single Gala -------------------- */
-  .gala-header .width-75 {
-    width: 100%;
-    margin-top: 80px;
-  }
-
   .gala-header .award-link {
     display: block;
   }

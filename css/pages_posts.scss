@@ -247,57 +247,58 @@ GENERAL PAGE/POST STYLES
 .gala-header {
 	position: relative;
 	z-index: 2;
-	}
 
-	.gala-header .page-header {
+	.page-header {
 		padding-bottom: 0;
+		@media screen and (max-width: $md) {
+			margin-top: 100px;
+		}
 	}
-	.gala-header .page-title {
+	.page-title {
 		margin-bottom: 0.5em;
 	}
+}
 
-	.gala-header .partner {
-		width: 33.333%;
+.gala-years {
+	position: absolute;
+	right: 0;
+	height: 100%;
+	z-index: 3;
+
+	.wrapper { padding: 10%; }
+
+	ul {
+		position: relative;
+		z-index: 2;
+		overflow: hidden;
+		background: inherit;
+	}
+}
+
+.gala-header .share-button-wrap {
+	float: left;
+	width: 32px;
+	margin: 0px 10px 1em 0;
+	text-align: left;
+	&:hover { height: 32px; width: 130px; }
+
+	.icon {
+		margin: 0 10px 0 0;
+		float: left;
 	}
 
-	.gala-years {
-		position: absolute;
-		right: 0;
-		height: 100%;
-		z-index: 3;
-		}
-		.gala-years .wrapper { padding: 10%; }
-			.gala-years ul {
-				position: relative;
-				z-index: 2;
-				overflow: hidden;
-				background: inherit;
-				}
+	&.facebook .icon { background: url('images/social_facebook_white.png') top left no-repeat; }
+	&.twitter .icon { background: url('images/social_twitter_white.png') top left no-repeat; }
+	&.email .icon { background: url('images/social_email_white.png') top left no-repeat; }
 
-
-	.gala-header .share-button-wrap {
+	.link {
+		display: block;
 		float: left;
-		width: 32px;
-		margin: 0px 10px 1em 0;
-		text-align: left;
-		}
-		.gala-header .share-button-wrap:hover { height: 32px; width: 130px; }
-
-		.gala-header .share-button-wrap .icon {
-			margin: 0 10px 0 0;
-			float: left;
-			}
-			.gala-header .share-button-wrap.facebook .icon { background: url('images/social_facebook_white.png') top left no-repeat; }
-			.gala-header .share-button-wrap.twitter .icon { background: url('images/social_twitter_white.png') top left no-repeat; }
-			.gala-header .share-button-wrap.email .icon { background: url('images/social_email_white.png') top left no-repeat; }
-
-		.gala-header .share-button-wrap .link {
-			display: block;
-			float: left;
-			width: 76px;
-			}
-			.gala-header .share-button-wrap.facebook .link { margin-top: 1px; }
-			.gala-header .share-button-wrap.twitter .link { margin-top: 5px; }
+		width: 76px;
+	}
+	&.facebook .link { margin-top: 1px; }
+	&.twitter .link { margin-top: 5px; }
+}
 
 .entry-media.gala {
 	&.grid-view {

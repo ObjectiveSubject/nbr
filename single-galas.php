@@ -21,23 +21,11 @@ get_header(); ?>
 					?>
 					<h1 class="page-title"><?php the_title(); ?><span class="faded-text divider">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span class="faded-text award-link"><a href="<?php echo site_url('/award-years/'.$this_year); ?>">See The Winners</a></span></h1>
 
-<!--
-					<?php if(get_field('partners')) : ?>
-						<div class="partners clear bg-82">
-							<h6 class="module-label">In association with</h6>
-							<?php while (have_rows('partners')) : the_row('partners'); ?>
-								<?php $partner = get_sub_field('partner_object'); ?>
-								<a href="<?php echo site_url('/partners/'.$this_year); ?>" class="partner"><img src="<?php the_field('partner_logo', $partner->ID); ?>"/></a>
-							<?php endwhile; ?>
-						</div>
-					<?php endif; ?>
--->
-
 					<?php // Partners --------------------- //
-						$args = array('post_type'=>'partners', 'award-years'=>$this_year);
+						$args = array( 'post_type' => 'partners', 'award-years' => $this_year );
 						$partners = get_posts($args);
-						if (!empty($partners)) : ?>
-						<div class="partners clear bg-82">
+						if ( !empty($partners) ) : ?>
+						<div class="partners clear width-25">
 							<h6 class="module-label">In association with</h6>
 							<?php foreach ($partners as $partner) : ?>
 							<a href="<?php echo site_url('/partners/'.$this_year); ?>" class="partner"><img src="<?php the_field('partner_logo', $partner->ID); ?>"/></a>
@@ -45,23 +33,26 @@ get_header(); ?>
 						</div>
 					<?php endif; ?>
 
-					<div class="share-button-wrap expandable twitter">
-						<span class="icon">Twitter</span>
-						<span class="link">
-							<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="<?php echo 'Great photos from the #NBRGala! H/t to @NBRfilm '; ?>">Tweet</a>
-							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-						</span>
-					</div>
-					<div class="share-button-wrap expandable facebook">
-						<span class="icon">Facebook</span>
-						<span class="link">
-							<div class="fb-share-button" data-href="<?php echo get_permalink(); ?>" data-type="button_count"></div>
-						</span>
+					<div class="sharing width-75">
+						<h6 class="module-label">Share</h6>
+						<div class="share-button-wrap expandable twitter">
+							<span class="icon">Twitter</span>
+							<span class="link">
+								<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="<?php echo 'Great photos from the #NBRGala! H/t to @NBRfilm '; ?>">Tweet</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+							</span>
+						</div>
+						<div class="share-button-wrap expandable facebook">
+							<span class="icon">Facebook</span>
+							<span class="link">
+								<div class="fb-share-button" data-href="<?php echo get_permalink(); ?>" data-type="button_count"></div>
+							</span>
+						</div>
+						<div class="share-button-wrap email">
+							<a href="mailto:?subject=National%20Board%20of%20Review%20|%20<?php the_title(); ?>&amp;body=<?php the_permalink(); ?>" class="icon">Email</a>
+						</div>
 					</div>
 
-					<div class="share-button-wrap email">
-						<a href="mailto:?subject=National%20Board%20of%20Review%20|%20<?php the_title(); ?>&amp;body=<?php the_permalink(); ?>" class="icon">Email</a>
-					</div>
 				</div>
 			</div>
 			<div class="gala-years width-25 bg-70">
