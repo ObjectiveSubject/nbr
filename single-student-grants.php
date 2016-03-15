@@ -93,9 +93,13 @@ get_header(); ?>
 				<div class="project-details">
 					<?php if ( $post_awards ) : ?>
 						<p class="small uppercase"><strong>Awarded</strong></p>
-						<?php foreach ( $post_awards as $award ) : ?>
-							<p class="project-award small uppercase"><a href="<?php echo( site_url('/student-grants/awards/' . $award->slug ) ); ?>"><strong><?php echo $this_grant_year .' '. $award->name . ' Winner'; ?></strong></a></p>
-						<?php endforeach; ?>
+						<?php if ( $post_awards ) : ?>
+							<p class="project-awards small uppercase">
+								<?php foreach ( $post_awards as $award ) : ?>
+								<a class="<?php echo "award-{$award->slug}"; ?>" href="<?php echo get_term_link($award); ?>"><strong><?php echo "{$this_grant_year} {$award->name}"; ?></strong></a><br>
+								<?php endforeach; ?>
+							</p>
+						<?php endif; ?>
 						<p>&nbsp;</p>
 					<?php endif; ?>
 					<?php if ( get_field('project_details') ) {
