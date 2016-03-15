@@ -635,6 +635,19 @@ GENERAL PAGE/POST STYLES
 
 /* Student/Film List */
 .archive {
+
+	.page-header a {
+		&.marion-carter-green-award:hover {
+			color: $marion-carter-green;
+		}
+		&.light-iron-award:hover {
+			color: $light-iron;
+		}
+		&.senior-post-award:hover {
+			color: $senior-post;
+		}
+	}
+
 	.award-content {
 		font-size: 20px;
 		@media screen and (max-width: $lg) {

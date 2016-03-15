@@ -1221,6 +1221,10 @@ object {
   color: white;
 }
 
+.hug {
+  margin-top: 0;
+}
+
 /* SEARCH FORM
 --------------------------------------------------------------
 -------------------------------------------------------------- */
@@ -2514,6 +2518,15 @@ GENERAL PAGE/POST STYLES
 --------------------------------------------------------------
 -------------------------------------------------------------- */
 /* Student/Film List */
+.archive .page-header a.marion-carter-green-award:hover {
+  color: #5C91FF;
+}
+.archive .page-header a.light-iron-award:hover {
+  color: #FFD24A;
+}
+.archive .page-header a.senior-post-award:hover {
+  color: #0093A4;
+}
 .archive .award-content {
   font-size: 20px;
 }

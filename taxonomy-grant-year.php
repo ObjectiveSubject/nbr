@@ -48,14 +48,6 @@ get_header(); ?>
 								</ul>
 								<a href="#" class="view-all-drawer">View All Schools</a>
 							</li>
-							<li class="grant-tax">
-								<ul class="grant-award-list drawer">
-									<?php foreach ($student_awards as $student_award) { ?>
-									<li><a href="<?php echo get_term_link($student_award); ?>"><?php echo $student_award->name; ?></a></li>
-									<?php } ?>
-								</ul>
-								<a href="#" class="view-all-drawer">View All Awards</a>
-							</li>
 						</ul>
 					</div>
 				</div>
@@ -63,14 +55,13 @@ get_header(); ?>
 				<?php if ( $has_partners ) : ?>
 				<div class="header-half grant-partners width-50 bg-76">
 					<div class="wrapper">
-						<p class="module-label uppercase">In association with</p>
-						<div class="partners clear">
-							<?php while ( have_posts() ) : the_post(); ?>
-								<?php if (get_post_type() == 'partners') : ?>
-								<a href="<?php echo site_url('/partners/'.$this_year); ?>" class="partner"><img src="<?php the_field('partner_logo'); ?>"/></a>
-								<?php endif; ?>
-							<?php endwhile; rewind_posts(); ?>
-						</div>
+						<?php if ( $student_awards ) :?>
+							<p class="uppercase hug">
+								<?php foreach ($student_awards as $student_award) : ?>
+								<a class="<?php echo $student_award->slug; ?>" href="<?php echo get_term_link($student_award); ?>"><?php echo $student_award->name; ?></a><br>
+								<?php endforeach; ?>
+							</p>
+						<?php endif; ?>
 					</div>
 				</div>
 				<?php endif; ?>
