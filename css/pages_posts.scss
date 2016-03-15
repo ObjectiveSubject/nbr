@@ -624,7 +624,7 @@ GENERAL PAGE/POST STYLES
 		}
 	}
 
-	.project-award {
+	.project-awards {
 		color: white;
 	}
 }
@@ -715,30 +715,39 @@ GENERAL PAGE/POST STYLES
 	&.student_award-marion-carter-green-award:hover {
 		background-color: $marion-carter-green;
 		color: white;
-		.project-award {
+		.project-awards {
 			color: white;
 		}
 	}
 	&.student_award-light-iron-award:hover {
 		background-color: $light-iron;
 		color: #2e2e2e;
-		.project-award {
+		.project-awards {
 			color: #2e2e2e;
 		}
 	}
 	&.student_award-senior-post-award:hover {
 		background-color: $senior-post;
 		color: white;
-		.project-award {
+		.project-awards {
 			color: white;
 		}
 	}
 }
 
-.project-award {
-	.student_award-marion-carter-green-award & { color: $marion-carter-green; }
-	.student_award-light-iron-award & { color: $light-iron; }
-	.student_award-senior-post-award & { color: $senior-post; }
+.project-awards {
+	a {
+		color: white;
+	}
+	a.award-marion-carter-green-award { color: $marion-carter-green; }
+	a.award-light-iron-award { color: $light-iron; }
+	a.award-senior-post-award { color: $senior-post; }
+
+	.student-grants:hover & {
+		a {
+			color: white;
+		}
+	}
 }
 
 

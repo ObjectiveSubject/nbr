@@ -12,7 +12,7 @@ get_header(); ?>
 	<?php
 		$grant_years = get_terms('grant-year', array('order'=>'DESC'));
 		$grant_schools = get_terms('schools');
-		$awards = get_terms('student_award');
+		$student_awards = get_terms('student_award');
 		$this_year = single_term_title( '', false );
 		$has_partners = false;
 		while ( have_posts() ) : the_post();
@@ -30,28 +30,28 @@ get_header(); ?>
 
 				<div class="header-half width-50">
 					<div class="wrapper">
-						<h1 class="page-title"><?php echo $this_year; ?> Student Grant Awardees</h1>
+						<h1 class="page-title"><?php echo $this_year; ?> Student Awards</h1>
 						<ul class="grant-tax-list clear">
 							<li class="grant-tax">
 								<ul class="grant-year-list drawer">
-									<?php foreach ( $grant_years as $grant_year ) { ?>
-									<li><a href="<?php echo(site_url('/student-grants/grant-year/' . $grant_year->slug)); ?>"><?php echo($grant_year->name) ?></a></li>
+									<?php foreach ($grant_years as $grant_year) { ?>
+									<li><a href="<?php echo get_term_link($grant_year); ?>"><?php echo $grant_year->name; ?></a></li>
 									<?php } ?>
 								</ul>
 								<a href="#" class="view-all-drawer">View All Years</a>
 							</li>
 							<li class="grant-tax">
 								<ul class="grant-school-list drawer">
-									<?php foreach ( $grant_schools as $grant_school ) { ?>
-									<li><a href="<?php echo(site_url('/student-grants/schools/' . $grant_school->slug)); ?>"><?php echo($grant_school->name) ?></a></li>
+									<?php foreach ($grant_schools as $grant_school) { ?>
+									<li><a href="<?php echo get_term_link($grant_school); ?>"><?php echo $grant_school->name; ?></a></li>
 									<?php } ?>
 								</ul>
 								<a href="#" class="view-all-drawer">View All Schools</a>
 							</li>
 							<li class="grant-tax">
-								<ul class="student-award-list drawer">
-									<?php foreach ( $awards as $award ) { ?>
-									<li><a href="<?php echo(site_url('/student-grants/awards/' . $award->slug)); ?>"><?php echo($award->name) ?></a></li>
+								<ul class="grant-award-list drawer">
+									<?php foreach ($student_awards as $student_award) { ?>
+									<li><a href="<?php echo get_term_link($student_award); ?>"><?php echo $student_award->name; ?></a></li>
 									<?php } ?>
 								</ul>
 								<a href="#" class="view-all-drawer">View All Awards</a>
@@ -102,7 +102,7 @@ get_header(); ?>
 
 						<?php if ( $post_grant_schools ) : ?>
 							<?php foreach ( $post_grant_schools as $post_grant_school ) { ?>
-								<p class="project-school small uppercase"><a href="<?php echo(site_url('/student-grants/schools/' . $post_grant_school->slug )); ?>"><?php echo $post_grant_school->name; ?></a></p>
+								<p class="project-school small uppercase"><a href="<?php echo get_term_link($post_grant_school); ?>"><?php echo $post_grant_school->name; ?></a></p>
 							<?php } ?>
 						<?php endif; ?>
 
@@ -116,9 +116,11 @@ get_header(); ?>
 						</p>
 
 						<?php if ( $post_awards ) : ?>
-							<?php foreach ( $post_awards as $post_award ) : ?>
-								<p class="project-award small push uppercase"><a href="<?php echo(site_url('/student-grants/awards/' . $post_award->slug )); ?>"><?php echo $this_year .' '. $post_award->name; ?> Winner</a></p>
-							<?php endforeach; ?>
+							<p class="project-awards small push uppercase">
+								<?php foreach ( $post_awards as $post_award ) : ?>
+								<a class="<?php echo "award-{$post_award->slug}"; ?>" href="<?php echo get_term_link($post_award); ?>"><?php echo $this_year .' '. $post_award->name; ?> Winner</a><br/>
+								<?php endforeach; ?>
+							</p>
 						<?php endif; ?>
 					</div>
 				</article>

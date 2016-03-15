@@ -2,10 +2,10 @@
 
 /* Student Grant Awards
 -------------------------------------------------- */
-add_action('init', 'register_student_awards');
+add_action('init', 'register_student_films');
 
-function register_student_awards() {
-	register_taxonomy( 'student_award',array (
+function register_student_films() {
+	register_taxonomy( 'student_award', array (
 		  0 => 'student-grants',
 		),
 		array(
@@ -13,7 +13,7 @@ function register_student_awards() {
 			'label' => 'Student Awards',
 			'show_ui' => true,
 			'query_var' => true,
-			'rewrite' => array( 'slug' => 'student-grants/awards' ),
+			'rewrite' => array( 'slug' => 'student-films/awards' ),
 			'show_admin_column' => true,
 			'labels' => array (
 			  'search_items' => 'Search Student Awards',
