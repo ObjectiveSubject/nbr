@@ -26,6 +26,11 @@ get_header(); ?>
 				</header><!-- .page-header -->
 
 				<div class="page-header award-content bg-0">
+					<div class="term-image">
+						<?php $image = get_field('term_image', get_queried_object()); ?>
+						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" />
+						<span class="caption"><?php echo $image['caption']; ?></span>
+					</div>
 					<?php echo apply_filters('the_content', term_description()); ?>
 				</div>
 

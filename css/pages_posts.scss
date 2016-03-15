@@ -629,7 +629,7 @@ GENERAL PAGE/POST STYLES
 	}
 }
 
-/* STUDENT GRANT ARCHIVE (GRANT YEARS, SCHOOLS, & AWARDS)
+/* STUDENT FILM ARCHIVES (GRANT YEARS, SCHOOLS, & AWARDS)
 --------------------------------------------------------------
 -------------------------------------------------------------- */
 
@@ -653,6 +653,35 @@ GENERAL PAGE/POST STYLES
 			}
 		}
 
+		p {
+			margin-left: 52.5%;
+			@media screen and (max-width: $md) {
+				margin-left: 0;
+			}
+		}
+
+	}
+}
+
+.term-image {
+    max-width: 50%;
+    float: left;
+	margin-bottom: 1em;
+	@media screen and (max-width: $md) {
+		max-width: none;
+		float: none;
+		margin: 0;
+	}
+
+	img {
+		display: block;
+		width: auto;
+		height: auto;
+		margin-right: 1em;
+	}
+
+	.caption {
+		font-size: 14px;
 	}
 }
 

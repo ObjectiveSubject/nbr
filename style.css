@@ -2510,7 +2510,7 @@ GENERAL PAGE/POST STYLES
   color: white;
 }
 
-/* STUDENT GRANT ARCHIVE (GRANT YEARS, SCHOOLS, & AWARDS)
+/* STUDENT FILM ARCHIVES (GRANT YEARS, SCHOOLS, & AWARDS)
 --------------------------------------------------------------
 -------------------------------------------------------------- */
 /* Student/Film List */
@@ -2532,6 +2532,36 @@ GENERAL PAGE/POST STYLES
     float: none;
     margin-right: 0;
   }
+}
+.archive .award-content p {
+  margin-left: 52.5%;
+}
+@media screen and (max-width: 768px) {
+  .archive .award-content p {
+    margin-left: 0;
+  }
+}
+
+.term-image {
+  max-width: 50%;
+  float: left;
+  margin-bottom: 1em;
+}
+@media screen and (max-width: 768px) {
+  .term-image {
+    max-width: none;
+    float: none;
+    margin: 0;
+  }
+}
+.term-image img {
+  display: block;
+  width: auto;
+  height: auto;
+  margin-right: 1em;
+}
+.term-image .caption {
+  font-size: 14px;
 }
 
 .grant-tax-list {
