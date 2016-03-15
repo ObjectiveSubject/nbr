@@ -45,7 +45,7 @@ function cptui_register_my_taxes_schools() {
 			'label' => 'Schools',
 			'show_ui' => true,
 			'query_var' => true,
-			'rewrite' => array( 'slug' => 'student-grants/schools' ),
+			'rewrite' => array( 'slug' => 'student-films/schools' ),
 			'show_admin_column' => false,
 			'labels' => array (
 			  'search_items' => 'Search Schools',
@@ -78,7 +78,7 @@ function cptui_register_my_taxes_grant_year() {
 			'label' => 'Grant Years',
 			'show_ui' => true,
 			'query_var' => true,
-			'rewrite' => array( 'slug' => 'student-grants/grant-year' ),
+			'rewrite' => array( 'slug' => 'student-films/grant-year' ),
 			'show_admin_column' => true,
 			'labels' => array (
 			  'search_items' => 'Search Grant Years',
