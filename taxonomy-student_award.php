@@ -9,8 +9,8 @@ get_header(); ?>
 
 	<?php
 	$grant_years = get_terms('grant-year', array('order'=>'DESC'));
-	$grant_schools = get_terms('schools');
-	$student_awards = get_terms('student_award'); ?>
+	$grant_schools = get_terms('schools', array('orderby'=>'term_order'));
+	$student_awards = get_terms('student_award', array('orderby'=>'term_order')); ?>
 
 	<section id="primary" class="content-area bg-80">
 		<div id="content" class="site-content" role="main">
