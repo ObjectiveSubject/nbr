@@ -2510,8 +2510,18 @@ GENERAL PAGE/POST STYLES
   font-size: 13px;
   font-weight: normal;
 }
-.project-details .project-awards {
-  color: white;
+.project-details .project-awards a {
+  display: block;
+  margin: 0.5em 0;
+}
+.project-details .project-awards a.award-marion-carter-green-award:hover {
+  color: #5C91FF;
+}
+.project-details .project-awards a.award-light-iron-award:hover {
+  color: #FFD24A;
+}
+.project-details .project-awards a.award-senior-post-award:hover {
+  color: #0093A4;
 }
 
 /* STUDENT FILM ARCHIVES (GRANT YEARS, SCHOOLS, & AWARDS)

@@ -625,7 +625,20 @@ GENERAL PAGE/POST STYLES
 	}
 
 	.project-awards {
-		color: white;
+		a {
+			display: block;
+			margin: 0.5em 0;
+
+			&.award-marion-carter-green-award:hover {
+				color: $marion-carter-green;
+			}
+			&.award-light-iron-award:hover {
+				color: $light-iron;
+			}
+			&.award-senior-post-award:hover {
+				color: $senior-post;
+			}
+		}
 	}
 }
 

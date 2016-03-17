@@ -96,7 +96,7 @@ get_header(); ?>
 						<?php if ( $post_awards ) : ?>
 							<p class="project-awards small uppercase">
 								<?php foreach ( $post_awards as $award ) : ?>
-								<a class="<?php echo "award-{$award->slug}"; ?>" href="<?php echo get_term_link($award); ?>"><strong><?php echo "{$this_grant_year} {$award->name}"; ?></strong></a><br>
+								<a class="<?php echo "award-{$award->slug}"; ?>" href="<?php echo get_term_link($award); ?>"><strong><?php echo "{$this_grant_year} {$award->name}"; ?></strong></a>
 								<?php endforeach; ?>
 							</p>
 						<?php endif; ?>
