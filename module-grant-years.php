@@ -34,7 +34,7 @@ $grant_winners = new WP_Query ($args);
 					<?php
 					$grant_years = get_terms('grant-year', array('order'=>'DESC'));
 					foreach ($grant_years as $grant_year) { ?>
-					<li><a href="<?php echo(site_url('/student-grants/grant-year/' . $grant_year->slug)); ?>"><?php echo($grant_year->name) ?></a></li>
+					<li><a href="<?php echo get_term_link($grant_year); ?>"><?php echo($grant_year->name) ?></a></li>
 					<?php } ?>
 				</ul>
 				<a href="#" class="view-all-drawer">View All Years</a>
@@ -55,7 +55,7 @@ $grant_winners = new WP_Query ($args);
 				if(get_field('project_trailer') || get_the_excerpt() || get_the_content() ) : ?>
 					<a href="<?php the_permalink(); ?>" class="clear">
 				<?php else : ?>
-					<a href="<?php echo(site_url('/student-grants/grant-year/' . $this_year)); ?>" class="clear">
+					<a href="<?php echo(site_url('/student-films/grant-year/' . $this_year)); ?>" class="clear">
 				<?php endif; ?>
 
 					<?php if (get_field('project_still_frame')) : ?>
