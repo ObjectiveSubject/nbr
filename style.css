@@ -2643,7 +2643,7 @@ GENERAL PAGE/POST STYLES
   opacity: .15;
 }
 .student-grants p {
-  margin-bottom: 5px;
+  margin: 0 0 5px 30%;
   line-height: 1.25em;
   -webkit-transition: color 300ms ease;
   -moz-transition: color 300ms ease;

@@ -762,7 +762,7 @@ GENERAL PAGE/POST STYLES
 	.project-image.placeholder { opacity: .15; }
 
 	p {
-		margin-bottom: 5px;
+		margin: 0 0 5px 30%;
 		line-height: 1.25em;
 		@include transition(color 300ms ease);
 	}
