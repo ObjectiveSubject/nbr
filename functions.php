@@ -117,8 +117,8 @@ add_action( 'pre_get_posts', 'search_results' );
 /* Grant Year tax archive */
 function grant_year_archive( $query ) {
     if ( $query->is_tax('grant-year') ) {
-        //$query->set( 'post_type','student-grants' );
         $query->set( 'posts_per_page', -1 );
+		$query->set( 'orderby', array( 'title' => 'ASC' ) );
     }
 }
 add_action( 'pre_get_posts', 'grant_year_archive' );
@@ -128,6 +128,7 @@ add_action( 'pre_get_posts', 'grant_year_archive' );
 function schools_archive( $query ) {
     if ( $query->is_tax('schools') ) {
         $query->set( 'posts_per_page', -1 );
+		$query->set( 'orderby', array( 'date' => 'DESC', 'title' => 'ASC' ) );
     }
 }
 add_action( 'pre_get_posts', 'schools_archive' );
@@ -137,6 +138,7 @@ add_action( 'pre_get_posts', 'schools_archive' );
 function student_awards_archive( $query ) {
     if ( $query->is_tax('student_award') ) {
         $query->set( 'posts_per_page', -1 );
+		$query->set( 'orderby', array( 'date' => 'DESC', 'title' => 'ASC' ) );
     }
 }
 add_action( 'pre_get_posts', 'student_awards_archive' );
