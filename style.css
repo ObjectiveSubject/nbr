@@ -2517,7 +2517,7 @@ GENERAL PAGE/POST STYLES
 .project-details .project-awards a.award-marion-carter-green-award:hover {
   color: #5C91FF;
 }
-.project-details .project-awards a.award-light-iron-award:hover {
+.project-details .project-awards a.award-light-iron:hover {
   color: #FFD24A;
 }
 .project-details .project-awards a.award-senior-post-award:hover {
@@ -2657,7 +2657,7 @@ GENERAL PAGE/POST STYLES
 .student-grants .project-awards a.award-marion-carter-green-award {
   color: #5C91FF;
 }
-.student-grants .project-awards a.award-light-iron-award {
+.student-grants .project-awards a.award-light-iron {
   color: #FFD24A;
 }
 .student-grants .project-awards a.award-senior-post-award {
@@ -2670,11 +2670,11 @@ GENERAL PAGE/POST STYLES
   background-color: #5C91FF;
   color: white;
 }
-.student-grants.student_award-light-iron-award:hover {
+.student-grants.student_award-light-iron:hover {
   background-color: #FFD24A;
   color: #2e2e2e;
 }
-.student-grants.student_award-light-iron-award:hover .project-awards a {
+.student-grants.student_award-light-iron:hover .project-awards a {
   color: #2e2e2e;
 }
 .student-grants.student_award-senior-post-award:hover {

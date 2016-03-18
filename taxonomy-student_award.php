@@ -9,25 +9,24 @@ get_header(); ?>
 
 	<?php
 	$grant_years = get_terms('grant-year', array('order'=>'DESC'));
-	$grant_schools = get_terms('schools', array('orderby'=>'term_order'));
-	$student_awards = get_terms('student_award', array('orderby'=>'term_order')); ?>
+	$grant_schools = get_terms('schools');
+	$student_awards = get_terms('student_award');
+	$queried_object = get_queried_object();
+	$award_name = single_term_title( '', false );
+	$archive_title = get_field('term_archive_title', $queried_object) ?>
 
 	<section id="primary" class="content-area bg-80">
 		<div id="content" class="site-content" role="main">
 
-			<?php
-				$award_name = single_term_title( '', false );
-			?>
-
 			<?php if ( term_description() ) : ?>
 
 				<header class="page-header bg-84">
-					<h1 class="page-title">About the <?php echo $award_name; ?></h1>
+					<h1 class="page-title"><?php echo ($archive_title) ? $archive_title : "About the {$award_name}"; ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-header award-content bg-0">
 					<div class="term-image">
-						<?php $image = get_field('term_image', get_queried_object()); ?>
+						<?php $image = get_field('term_image', $queried_object); ?>
 						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" />
 						<span class="caption"><?php echo $image['caption']; ?></span>
 					</div>
@@ -115,7 +114,7 @@ get_header(); ?>
 						<?php if ( $post_awards ) : ?>
 							<p class="project-awards small push uppercase">
 								<?php foreach ( $post_awards as $post_award ) :
-									if ( get_queried_object()->term_id !== $post_award->term_id ) : ?>
+									if ( $queried_object->term_id !== $post_award->term_id ) : ?>
 										<a class="<?php echo "award-{$post_award->slug}"; ?>" href="<?php echo get_term_link($post_award); ?>"><?php echo $this_year .' '. $post_award->name; ?> Winner</a><br/>
 									<?php endif; ?>
 								<?php endforeach; ?>

@@ -632,7 +632,7 @@ GENERAL PAGE/POST STYLES
 			&.award-marion-carter-green-award:hover {
 				color: $marion-carter-green;
 			}
-			&.award-light-iron-award:hover {
+			&.award-light-iron:hover {
 				color: $light-iron;
 			}
 			&.award-senior-post-award:hover {
@@ -774,7 +774,7 @@ GENERAL PAGE/POST STYLES
 			color: white;
 		}
 		a.award-marion-carter-green-award { color: $marion-carter-green; }
-		a.award-light-iron-award { color: $light-iron; }
+		a.award-light-iron { color: $light-iron; }
 		a.award-senior-post-award { color: $senior-post; }
 	}
 	&:hover {
@@ -788,7 +788,7 @@ GENERAL PAGE/POST STYLES
 		background-color: $marion-carter-green;
 		color: white;
 	}
-	&.student_award-light-iron-award:hover {
+	&.student_award-light-iron:hover {
 		background-color: $light-iron;
 		color: #2e2e2e;
 		.project-awards {
