@@ -2585,6 +2585,8 @@ GENERAL PAGE/POST STYLES
 }
 .term-image .caption {
   font-size: 14px;
+  display: block;
+  padding: 5px 0;
 }
 
 .grant-tax-list {
