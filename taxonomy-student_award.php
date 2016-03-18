@@ -66,7 +66,7 @@ get_header(); ?>
 			</header><!-- .page-header -->
 
 			<?php // Grant Winners ------------------ // ?>
-			<div class="grant-winners clear">
+			<div class="grant-winners clear infinite-scroll-container">
 				<?php
 				$count = 1;
 				while ( have_posts() ) : the_post();

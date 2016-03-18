@@ -965,6 +965,10 @@ object {
   opacity: .25;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .push {
   margin-top: 20px;
 }
@@ -1075,6 +1079,20 @@ object {
 .previouspostslink:hover:before,
 .nextpostslink:hover:after {
   opacity: 1;
+}
+
+.navigation-paging,
+.wpifs-loading {
+  float: left;
+  width: 100%;
+  margin: 2em 0;
+  min-height: 48px;
+  background: url(images/loading.svg) no-repeat center;
+  background-size: 48px 48px;
+}
+.navigation-paging > *,
+.wpifs-loading > * {
+  margin: 0;
 }
 
 /* WIDTHS AND COLORS

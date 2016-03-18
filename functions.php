@@ -137,7 +137,7 @@ add_action( 'pre_get_posts', 'schools_archive' );
 /* Student awards archive */
 function student_awards_archive( $query ) {
     if ( $query->is_tax('student_award') ) {
-        $query->set( 'posts_per_page', -1 );
+        $query->set( 'posts_per_page', 20 );
 		$query->set( 'orderby', array( 'date' => 'DESC', 'title' => 'ASC' ) );
     }
 }
