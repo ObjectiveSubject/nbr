@@ -13,7 +13,7 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 
 			<?php
-			$grant_years = get_terms('grant-year', array('order'=>'DESC'));
+			$grant_years = get_terms('grant-year');
 			$grant_schools = get_terms('schools');
 			$student_awards = get_terms('student_award');
 			?>
