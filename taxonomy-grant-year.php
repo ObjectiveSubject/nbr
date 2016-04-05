@@ -30,7 +30,7 @@ get_header(); ?>
 
 				<div class="header-half width-50">
 					<div class="wrapper">
-						<h1 class="page-title"><?php echo $this_year; ?> Student Awards</h1>
+						<h1 class="page-title"><?php echo $this_year; ?> Student Grants</h1>
 						<ul class="grant-tax-list clear">
 							<li class="grant-tax">
 								<ul class="grant-year-list drawer">
