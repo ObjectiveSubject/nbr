@@ -9,8 +9,8 @@ get_header(); ?>
 
 	<?php
 	$grant_years = get_terms('grant-year');
-	$grant_schools = get_terms('schools');
-	$student_awards = get_terms('student_award');
+	$grant_schools = get_terms( 'schools', array( 'orderby'=>'term_order' ) );
+	$student_awards = get_terms( 'student_award', array( 'orderby'=>'term_order' ) );
 	$queried_object = get_queried_object();
 	$award_name = single_term_title( '', false );
 	$archive_title = get_field('term_archive_title', $queried_object) ?>
