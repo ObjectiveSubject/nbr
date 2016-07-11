@@ -8,12 +8,12 @@
 get_header(); ?>
 
 	<?php
-	$grant_years = get_terms('grant-year');
-	$grant_schools = get_terms( 'schools', array( 'orderby'=>'term_order' ) );
-	$student_awards = get_terms( 'student_award', array( 'orderby'=>'term_order' ) );
+	$grant_years 	= get_terms( array( 'taxonomy' => 'grant-year', 'order' => 'DESC' ) );
+	$grant_schools 	= get_terms( array( 'taxonomy' => 'schools', 'orderby' => 'title', 'order' => 'ASC' ) );
+	$student_awards = get_terms( array( 'taxonomy' => 'student_award', 'orderby' => 'term_order' ) );
 	$queried_object = get_queried_object();
-	$award_name = single_term_title( '', false );
-	$archive_title = get_field('term_archive_title', $queried_object) ?>
+	$award_name 	= single_term_title( '', false );
+	$archive_title 	= get_field('term_archive_title', $queried_object) ?>
 
 	<section id="primary" class="content-area bg-80">
 		<div id="content" class="site-content" role="main">

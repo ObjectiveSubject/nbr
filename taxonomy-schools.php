@@ -13,9 +13,9 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 
 			<?php
-			$grant_years = get_terms('grant-year');
-			$grant_schools = get_terms('schools', array( 'orderby'=>'term_order' ));
-			$student_awards = get_terms('student_award', array( 'orderby'=>'term_order' ));
+			$grant_years 	= get_terms( array( 'taxonomy' => 'grant-year', 'order' => 'DESC' ) );
+			$grant_schools 	= get_terms( array( 'taxonomy' => 'schools', 'orderby' => 'title', 'order' => 'ASC' ) );
+			$student_awards = get_terms( array( 'taxonomy' => 'student_award', 'orderby' => 'term_order' ) );
 			?>
 			<header class="page-header bg-70">
 				<h1 class="page-title"><?php single_term_title( '', true ); ?> Student Awards</h1>

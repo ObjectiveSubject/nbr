@@ -12,7 +12,7 @@ get_header(); ?>
 	<section id="primary" class="content-area bg-76">
 		<div id="content" class="site-content" role="main">
 
-			<?php $award_names = get_terms( 'award-names', array( 'orderby'=>'term_order' ) );?>
+			<?php $award_names = get_terms( array( 'taxonomy' => 'award-names', 'orderby'=>'term_order' ) ); ?>
 
 			<header class="page-header bg-70">
 				<h1 class="page-title"><?php single_term_title( '', true ); ?><span class="faded-text">&nbsp;&nbsp;|&nbsp;&nbsp;Archive</span></h1>

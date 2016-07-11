@@ -8,7 +8,7 @@
 get_header(); ?>
 
 	<?php
-	$grant_years = get_the_terms( $post->ID,'grant-year');
+	$grant_years = get_the_terms( $post->ID, 'grant-year');
 	$post_awards = get_the_terms( $post->ID, 'student_award' );
 	$awards_classes = '';
 	$this_grant_year = '';

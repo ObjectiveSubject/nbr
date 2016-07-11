@@ -8,17 +8,17 @@ global $post;
 $galaPartners = array();
 $grantPartners = array();
 $currentTerm = get_queried_object();
-$partner_years = get_terms('partner-year', array('order'=>'DESC')); 
+$partner_years = get_terms( array( 'taxonomy' => 'partner-year', 'order'=>'DESC' ) ); 
 
 get_header(); ?>
 
-	<div id="primary" class="content-area partners-list">	
-		
+	<div id="primary" class="content-area partners-list">
+
 		<div id="content" class="site-content width-75 bg-76" role="main">
-		
+
 			<header class="page-header bg-72">
 				<h1 class="page-title"><? single_term_title(); ?> Partners</h1>
-				
+
 				<?php // Partner Years -------- // ?>
 				<ul class="partner-tax-list clear">
 					<li class="partner-tax">
@@ -29,19 +29,19 @@ get_header(); ?>
 						</ul>
 						<a href="#" class="view-all-drawer">View All Years</a>
 					</li>
-				</ul>				
-				
+				</ul>
+
 			</header>
-		
+
 			<?php	while ( have_posts() ) : the_post();
-				
+
 				if (has_term('gala-partner', 'partner-type') && has_term($currentTerm->slug, 'award-years')) { ?>
-					<? array_push($galaPartners, $post);		
-				} 
+					<? array_push($galaPartners, $post);
+				}
 				if (has_term('student-grant-partner', 'partner-type') && has_term($currentTerm->slug, 'grant-year')) { ?>
 					<? array_push($grantPartners, $post);
 				}
-				
+
 			endwhile; ?>
 
 			<?php if (!empty($galaPartners)) : ?>
@@ -56,7 +56,7 @@ get_header(); ?>
 				} wp_reset_postdata(); ?>
 			</div>
 			<?php endif; ?>
-			
+
 			<?php if (!empty($grantPartners)) : ?>
 			<div class="grant-partners">
 				<header class="page-header">
@@ -69,15 +69,15 @@ get_header(); ?>
 				} wp_reset_postdata(); ?>
 			</div>
 			<?php endif; ?>
-	
+
 		</div><!-- #content -->
-		
+
 		<div id="secondary" class="widget-area awards width-25" role="complementary">
 			<aside id="awards-module" class="widget widget-awards bg-84">
 				<?php get_template_part('module-recent-gala'); ?>
 			</aside>
 		</div><!-- #secondary -->
-		
+
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>

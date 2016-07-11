@@ -32,7 +32,7 @@ $grant_winners = new WP_Query ($args);
 			<li class="grant-tax">
 				<ul class="grant-year-list drawer">
 					<?php
-					$grant_years = get_terms('grant-year', array('order'=>'DESC'));
+					$grant_years = get_terms( array( 'taxonomy' => 'grant-year', 'order' => 'DESC' ) );
 					foreach ($grant_years as $grant_year) { ?>
 					<li><a href="<?php echo get_term_link($grant_year); ?>"><?php echo($grant_year->name) ?></a></li>
 					<?php } ?>

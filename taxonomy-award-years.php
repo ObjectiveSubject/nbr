@@ -12,7 +12,7 @@ get_header(); ?>
 	<section id="primary" class="content-area bg-76">
 		<div id="content" class="site-content" role="main">
 			<?php
-			$award_years = get_terms('award-years', array('order'=>'DESC'));
+			$award_years = get_terms( array( 'taxonomy' => 'award-years', 'order'=>'DESC' ) );
 			$current_year = $wp_query->queried_object->name;
 			?>
 

@@ -10,11 +10,11 @@
 get_header(); ?>
 
 	<?php
-		$grant_years = get_terms('grant-year');
-		$grant_schools = get_terms('schools');
-		$student_awards = get_terms('student_award');
-		$this_year = single_term_title( '', false );
-		$has_partners = false;
+		$grant_years 	= get_terms( array( 'taxonomy' => 'grant-year', 'order' => 'DESC' ) );
+		$grant_schools 	= get_terms( array( 'taxonomy' => 'schools', 'orderby' => 'title', 'order' => 'ASC' ) );
+		$student_awards = get_terms( array( 'taxonomy' => 'student_award', 'orderby' => 'term_order' ) );
+		$this_year 		= single_term_title( '', false );
+		$has_partners 	= false;
 		while ( have_posts() ) : the_post();
 			if ( get_post_type() == 'partners' ) {
 				$has_partners = true;
