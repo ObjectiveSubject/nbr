@@ -14,13 +14,6 @@ get_header(); ?>
 		$grant_schools 	= get_terms( array( 'taxonomy' => 'schools', 'orderby' => 'title', 'order' => 'ASC' ) );
 		$student_awards = get_terms( array( 'taxonomy' => 'student_award', 'orderby' => 'term_order' ) );
 		$this_year 		= single_term_title( '', false );
-		$has_partners 	= false;
-		while ( have_posts() ) : the_post();
-			if ( get_post_type() == 'partners' ) {
-				$has_partners = true;
-				break;
-			}
-		endwhile; rewind_posts();
 	?>
 
 	<section id="primary" class="content-area bg-80">
@@ -52,7 +45,6 @@ get_header(); ?>
 					</div>
 				</div>
 
-				<?php if ( $has_partners ) : ?>
 				<div class="header-half grant-partners width-50 bg-76">
 					<div class="wrapper">
 						<?php if ( $student_awards ) :?>
@@ -64,7 +56,6 @@ get_header(); ?>
 						<?php endif; ?>
 					</div>
 				</div>
-				<?php endif; ?>
 
 			</header><!-- .page-header -->
 
