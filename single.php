@@ -37,20 +37,26 @@ get_header(); ?>
 			</header>
 
 			<div class="entry-media post">
-				<?php if(get_field('feature_slideshow_images')): ?>
+				<?php if( have_rows('feature_slideshow_images') ): ?>
 				<ul class="post-slides nbr-slider" data-slick='{ "prevArrow": ".slick-nav.prev", "nextArrow": ".slick-nav.next" }'>
-					<?php while(has_sub_field('feature_slideshow_images')): ?>
-					<li>
-						<div class="image bg-80">
-							<div class="image-wrapper">
-								<img src="<?php the_sub_field('feature_slideshow_image'); ?>" alt="slideshow image"/>
+					
+					<?php while( have_rows('feature_slideshow_images') ) : the_row(); ?>
+
+						<li>
+							<div class="image bg-80">
+								<div class="image-wrapper">
+									<img src="<?php the_sub_field('feature_slideshow_image'); ?>" alt="slideshow image"/>
+								</div>
 							</div>
-						</div>
-						<?php if (get_sub_field('feature_slideshow_image_caption')) : ?>
-						<div class="caption bg-12"><?php the_sub_field('feature_slideshow_image_caption'); ?></div>
-						<?php endif; ?>
-					</li>
+							<?php 
+							$feature_slideshow_image_caption = get_sub_field('feature_slideshow_image_caption');
+							if ( $feature_slideshow_image_caption ) : ?>
+								<div class="caption bg-12"><?php echo $feature_slideshow_image_caption; ?></div>
+							<?php endif; ?>
+						</li>
+
 					<?php endwhile; ?>
+
 				</ul>
 				<div class="slick-nav-arrows">
 					<a href="#" class="slick-nav prev">Previous</a>
