@@ -37,6 +37,11 @@ get_header(); ?>
 			</header>
 
 			<div class="entry-media post">
+
+			  	<script>
+					<?php var_dump( get_field('feature_slideshow_images') ); ?>  
+				</script>
+
 				<?php if( have_rows('feature_slideshow_images') ): ?>
 				<ul class="post-slides nbr-slider" data-slick='{ "prevArrow": ".slick-nav.prev", "nextArrow": ".slick-nav.next" }'>
 					
