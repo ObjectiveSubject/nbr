@@ -39,7 +39,11 @@ get_header(); ?>
 			<div class="entry-media post">
 
 			  	<script>
-					<?php var_dump( get_field('feature_slideshow_images') ); ?>  
+					<?php var_dump( array(
+						'get_field' => get_field('feature_slideshow_images', $post->ID),
+						'have_rows' => have_rows('feature_slideshow_images'),
+						'get_post_meta' => get_post_meta( $post->ID, 'feature_slideshow_images', true )
+					) ); ?>  
 				</script>
 
 				<?php if( have_rows('feature_slideshow_images') ): ?>
